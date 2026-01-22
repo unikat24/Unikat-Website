@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, nofollow">
     <title>Schaden melden Rostock | Schnelle Hilfe im Schadensfall | Unikat</title>
+    
     <link rel="icon" type="image/png" href="img/favicon.png">
     <link rel="apple-touch-icon" href="img/favicon.png">
+    
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -26,31 +28,57 @@
         <section class="section bg-white">
             <div class="container">
                 <div class="grid-2">
+                    
                     <div class="card">
                         <div class="card-icon"><i class="fa-solid fa-user"></i></div>
                         <h3>Privatkunden</h3>
                         <p>KFZ, Haftpflicht, Hausrat oder Gebäude.</p>
-                        <form style="margin-top: 20px;">
-                            <input type="text" placeholder="Name" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 4px;">
-                            <input type="email" placeholder="E-Mail" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 4px;">
-                            <textarea placeholder="Was ist passiert?" rows="4" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 4px;"></textarea>
-                            <button class="btn btn-primary" style="width: 100%;">Meldung absenden</button>
+                        
+                        <form action="https://formspree.io/f/xykgzala" method="POST" style="margin-top: 20px;">
+                            <input type="hidden" name="_next" value="https://unikat24.github.io/Unikat-Website/danke.html">
+                            <input type="hidden" name="_subject" value="Neue Schadenmeldung (Privat)">
+                            <input type="text" name="_gotcha" style="display:none">
+
+                            <input type="text" name="name" required placeholder="Name" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 4px;">
+                            <input type="email" name="email" required placeholder="E-Mail" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 4px;">
+                            <textarea name="schaden_beschreibung" required placeholder="Was ist passiert?" rows="4" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 4px;"></textarea>
+                            
+                            <div style="font-size: 0.85em; margin-bottom: 15px; text-align: left;">
+                                <input type="checkbox" name="privacy_privat" id="privacy_privat" required>
+                                <label for="privacy_privat">Ich akzeptiere die <a href="datenschutz.html" target="_blank">Datenschutzerklärung</a>.</label>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary" style="width: 100%;">Meldung absenden</button>
                         </form>
                     </div>
+
                     <div class="card">
                         <div class="card-icon"><i class="fa-solid fa-briefcase"></i></div>
                         <h3>Unternehmen</h3>
                         <p>Flotte, Betriebshaftpflicht, Transport oder Sachschaden.</p>
-                        <form style="margin-top: 20px;">
-                             <input type="text" placeholder="Firmenname" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 4px;">
-                             <input type="text" placeholder="Ansprechpartner" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 4px;">
-                             <textarea placeholder="Kurze Beschreibung" rows="4" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 4px;"></textarea>
-                             <button class="btn btn-accent" style="width: 100%;">Meldung absenden</button>
+                        
+                        <form action="https://formspree.io/f/xykgzala" method="POST" style="margin-top: 20px;">
+                            <input type="hidden" name="_next" value="https://unikat24.github.io/Unikat-Website/danke.html">
+                            <input type="hidden" name="_subject" value="Neue Schadenmeldung (FIRMA)">
+                            <input type="text" name="_gotcha" style="display:none">
+
+                            <input type="text" name="firmenname" required placeholder="Firmenname" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 4px;">
+                            <input type="text" name="ansprechpartner" required placeholder="Ansprechpartner" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 4px;">
+                            <input type="email" name="email" required placeholder="E-Mail" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 4px;">
+                            <textarea name="schaden_beschreibung" required placeholder="Kurze Beschreibung des Vorfalls" rows="4" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 4px;"></textarea>
+                            
+                            <div style="font-size: 0.85em; margin-bottom: 15px; text-align: left;">
+                                <input type="checkbox" name="privacy_firma" id="privacy_firma" required>
+                                <label for="privacy_firma">Ich akzeptiere die <a href="datenschutz.html" target="_blank">Datenschutzerklärung</a>.</label>
+                            </div>
+
+                            <button type="submit" class="btn btn-accent" style="width: 100%;">Meldung absenden</button>
                         </form>
                     </div>
+
                 </div>
                 <div class="text-center mt-20">
-                    <p><strong>Dringender Notfall?</strong><br>Während der Geschäftszeiten: 0381 669193 0</p>
+                    <p><strong>Dringender Notfall?</strong><br>Während der Geschäftszeiten: <a href="tel:+493816691930">0381 669193 0</a></p>
                 </div>
             </div>
         </section>

@@ -1,4 +1,4 @@
-/* --- DATEI: styles.css --- */
+/* --- DATEI: styles.css (KOMPLETT & REPARIERT) --- */
 
 /* --- VARIABLEN & DESIGN SYSTEM --- */
 :root {
@@ -11,7 +11,7 @@
     --whatsapp-green: #25D366;
     --border-radius: 6px;
     --container-width: 1200px;
-    --header-height: 70px; /* Modern & Schlank */
+    --header-height: 70px; 
 }
 
 /* --- BASIS SETUP --- */
@@ -20,7 +20,7 @@ body { font-family: 'Inter', sans-serif; color: var(--text-color); line-height: 
 h1, h2, h3, h4 { color: var(--primary-color); font-weight: 700; margin-bottom: 1rem; line-height: 1.2; }
 p { margin-bottom: 1rem; }
 a { text-decoration: none; color: inherit; transition: 0.3s; cursor: pointer; }
-ul { list-style: none; padding: 0; margin: 0; } /* Reset für alle Listen */
+ul { list-style: none; padding: 0; margin: 0; } 
 img { max-width: 100%; height: auto; display: block; }
 
 .container { max-width: var(--container-width); margin: 0 auto; padding: 0 20px; }
@@ -137,39 +137,15 @@ header {
 .card:hover { border-color: var(--accent-color); box-shadow: 0 10px 30px rgba(0,0,0,0.08); transform: translateY(-5px); }
 .card-icon { width: 50px; height: 50px; background: #e0f2fe; color: var(--primary-color); display: flex; align-items: center; justify-content: center; border-radius: 8px; font-size: 1.3rem; margin-bottom: 20px; }
 .card h3 { font-size: 1.25rem; margin-bottom: 15px; }
+/* Links für Karten */
+a.card-link { text-decoration: none; color: inherit; display: block; height: 100%; }
+a.card-link:hover .card { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); border-color: var(--accent-color); }
 
-/* --- FIX: Listen (Flexibles Design statt starre Tabelle) --- */
-.card ul, .case-study-box ul {
-    list-style: none !important;
-    padding-left: 0;
-    margin-top: 15px;
-}
-
-.card li, .case-study-box li {
-    position: relative;       /* Wichtig als Bezugspunkt */
-    padding-left: 30px;       /* Platz links für das Icon reservieren */
-    margin-bottom: 12px;
-    line-height: 1.5;
-    display: block;           /* Standard-Verhalten: Text fließt natürlich */
-}
-
-/* Das Icon wird fest links platziert */
-.card li i, .case-study-box li i {
-    position: absolute;       /* Aus dem Textfluss nehmen */
-    left: 0;
-    top: 4px;                 /* Optisch an erste Zeile anpassen */
-    color: var(--accent-color);
-    width: 20px;
-}
-
-/* Das Label (fett) */
-.card li strong {
-    color: var(--primary-color);
-    font-weight: 700;
-    /* Optional: Wenn du willst, dass die Beschreibung IMMER in einer neuen Zeile beginnt,
-       entferne die Kommentardoppelslashes (//) vor der nächsten Zeile: */
-    /* display: block; */ 
-}
+/* FIX: Listen */
+.card ul, .case-study-box ul { list-style: none !important; padding-left: 0; margin-top: 15px; }
+.card li, .case-study-box li { position: relative; padding-left: 30px; margin-bottom: 12px; line-height: 1.5; display: block; }
+.card li i, .case-study-box li i { position: absolute; left: 0; top: 4px; color: var(--accent-color); width: 20px; }
+.card li strong { color: var(--primary-color); font-weight: 700; }
 .card-btn { margin-top: auto; padding: 10px 0; color: var(--primary-color); font-weight: 600; display: flex; align-items: center; gap: 8px; font-size: 0.95rem; transition: 0.3s; }
 .card:hover .card-btn { color: var(--accent-color); }
 .card-btn i { transition: transform 0.3s; }
@@ -223,16 +199,6 @@ img.buero-bild-fix { width: 100% !important; height: 100% !important; object-fit
 .checkbox-group a { text-decoration: underline; }
 .form-honeypot { display: none !important; }
 
-/* --- TEAM --- */
-.team-member { background: white; border: 1px solid #e2e8f0; border-radius: 8px; padding: 25px; text-align: center; transition: 0.3s; }
-.team-member:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
-.team-avatar { width: 100px; height: 100px; background-color: #e2e8f0; border-radius: 50%; margin: 0 auto 15px; overflow: hidden; }
-.team-avatar img { width: 100%; height: 100%; object-fit: cover; }
-.team-name { font-weight: 700; color: var(--primary-color); font-size: 1.1rem; margin-bottom: 5px; }
-.team-role { color: var(--accent-color); font-size: 0.9rem; font-weight: 600; margin-bottom: 15px; display: block; }
-.team-btn { font-size: 0.85rem; padding: 6px 15px; border: 1px solid var(--primary-color); border-radius: 4px; display: inline-block; }
-.team-btn:hover { background: var(--primary-color); color: white; }
-
 /* --- NEU: CASE STUDY & KARRIERE --- */
 .case-study-box { background: #f0f9ff; border-left: 5px solid var(--accent-color); padding: 25px; border-radius: 0 8px 8px 0; margin-top: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
 .case-study-title { font-weight: 800; color: var(--primary-color); text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; margin-bottom: 10px; display: block; }
@@ -253,10 +219,350 @@ img.buero-bild-fix { width: 100% !important; height: 100% !important; object-fit
     .nav-item:hover .dropdown-menu { display: flex; }
     .burger-menu { display: block; }
     .hero h1 { font-size: 2.2rem; }
-    .top-links { display: none; } /* Nur Telefon/Ort mobil anzeigen */
+    .top-links { display: none; }
+    .team-img-gf {height: 400px !important; /* Auf dem Handy etwas kürzer für bessere Usability */    }
+}
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+#header-placeholder { display: contents; }
+
+/* --- TEAM GRID STYLES (Final & Clean) --- */
+.team-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    border: 1px solid #e2e8f0;
+    transition: transform 0.2s, box-shadow 0.2s;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
-/* Animation */
-@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+.team-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+}
 
-#header-placeholder { display: contents; }
+.team-img {
+    width: 100%;
+    height: 350px !important;
+    object-fit: cover !important;
+    /* Fokus auf das Gesicht setzen, damit Köpfe nicht abgeschnitten werden */
+    object-position: center 20%; 
+    border-bottom: 1px solid #f1f5f9;
+    display: block;
+}
+
+.team-info {
+    padding: 25px 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.team-info h4 {
+    color: var(--primary-color);
+    margin-bottom: 8px;
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.team-role {
+    color: var(--accent-color);
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: 5px;
+}
+
+.team-focus {
+    font-size: 0.85rem;
+    color: #64748b;
+    margin-bottom: 15px;
+    font-style: italic;
+    min-height: 20px; 
+}
+
+/* E-Mail Button Style */
+a.team-mail {
+    display: inline-block;
+    margin-top: auto; /* Schiebt den Button immer nach unten */
+    color: #334155;
+    text-decoration: none;
+    font-size: 0.9rem;
+    padding: 8px 12px;
+    background: #f8fafc;
+    border-radius: 4px;
+    border: 1px solid #e2e8f0;
+    transition: all 0.2s;
+}
+
+a.team-mail:hover {
+    background: var(--accent-color);
+    color: white;
+    border-color: var(--accent-color);
+}
+
+a.team-mail i {
+    margin-right: 6px;
+}
+/* Spezieller Fix für die Geschäftsführung: Mehr Höhe = weniger Zoom */
+.grid-2 .team-card .team-img {
+    height: 500px !important; 
+    object-position: center 15%; /* Verhindert, dass oben zu viel Kopf abgeschnitten wird */
+}
+
+/* Mobil-Optimierung: In der Einspalten-Ansicht wieder normale Höhe */
+@media (max-width: 900px) {
+    .grid-2 .team-card .team-img {
+        height: 350px !important;
+    }
+}
+/* --- SPEZIAL-REGEL: Geschäftsführung "rauszoomen" --- */
+/* Durch mehr Höhe wird das Bild weniger stark beschnitten */
+.team-img-gf {
+    height: 550px !important; /* 100px mehr als der Standard */
+    object-position: center 30% !important; /* Fokus etwas tiefer setzen */
+}
+/* --- FINALES DESIGN: VORTEILE & NUTZEN --- */
+
+/* Der Hintergrund ist entscheidend für den Layering-Effekt */
+.uk-bg-subtle { 
+    background-color: #f8fafc !important; /* Sehr helles Grau-Blau */
+    border-top: 1px solid #e2e8f0;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+#vorteile .vorteile-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 32px;
+    align-items: stretch;
+}
+
+#vorteile .vorteile-card {
+    background: #ffffff;
+    border-radius: 22px;
+    padding: 40px 30px;
+    /* Weicher Schatten für Tiefe */
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
+    border: none; 
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#vorteile .vorteile-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.15);
+}
+
+#vorteile .vorteile-icon {
+    width: 80px; /* Größer für mehr Präsenz */
+    height: 80px;
+    border-radius: 50%;
+    background: rgba(212, 175, 55, 0.1); 
+    display: grid;
+    place-items: center;
+    margin: 0 auto 25px;
+}
+
+#vorteile .vorteile-icon i {
+    font-size: 32px;
+    color: #D4AF37;
+}
+
+#vorteile .vorteile-title {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 22px;
+    color: #0F2C44;
+}
+
+/* Optimierter Listen-Fluss: Text steht bündig */
+#vorteile .vorteile-list li {
+    display: grid !important;
+    grid-template-columns: 30px 1fr; /* Feste Spalte für das Häkchen */
+    gap: 10px;
+    align-items: start;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+#vorteile .vorteile-check {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: rgba(16, 185, 129, 0.1); 
+    color: #10b981; /* Klassisches Grün für Erfolg */
+    display: grid;
+    place-items: center;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+/* Responsive Anpassungen */
+@media (max-width: 980px) {
+    #vorteile .vorteile-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 640px) {
+    #vorteile .vorteile-grid { grid-template-columns: 1fr; gap: 20px; }
+    #vorteile .vorteile-card { padding: 25px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #vorteile .vorteile-card { transition: none; }
+    #vorteile .vorteile-card:hover { transform: none; }
+}
+/* --- ZUSATZ-STYLES FÜR LEAD-BOX & FORM --- */
+.uk-lead-box {
+    background: #0F2C44; /* Hanse-Blau */
+    border-radius: 22px;
+    padding: 50px;
+    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.2);
+}
+
+.uk-lead-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.uk-lead-form-side {
+    background: #ffffff;
+    padding: 35px;
+    border-radius: 16px;
+}
+
+.uk-form-input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    font-family: inherit;
+}
+
+@media (max-width: 850px) {
+    .uk-lead-grid { grid-template-columns: 1fr; gap: 30px; }
+    .uk-lead-box { padding: 30px; }
+}
+/* --- FOOTER & TRUST SIGNALE --- */
+.footer-section {
+    background: #020617; /* Dunkles Blau/Schwarz */
+    color: #cbd5e1;      /* Helles Grau */
+    padding: 60px 0 20px;
+    font-size: 0.95rem;
+    border-top: 4px solid var(--accent-color);
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 0.8fr 1.4fr; /* Mitte etwas schmaler */
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-col h4 {
+    color: white;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    display: inline-block;
+}
+
+.contact-list li, .footer-links li {
+    margin-bottom: 10px;
+    display: flex; align-items: flex-start; gap: 10px;
+}
+.contact-list i { color: var(--accent-color); margin-top: 4px; }
+.footer-links a:hover { color: white; text-decoration: underline; }
+
+/* Karriere Button im Footer */
+.career-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(255,255,255,0.1);
+    color: var(--accent-color);
+    padding: 6px 12px;
+    border-radius: 4px;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    font-size: 0.85rem;
+    text-decoration: none;
+    transition: 0.3s;
+}
+.career-badge:hover { background: var(--accent-color); color: white; }
+
+/* --- TRUST BOX DESIGN (Final & Clean) --- */
+.trust-col {
+    background: rgba(255,255,255,0.03);
+    padding: 25px 30px; /* Wieder etwas mehr Platz an den Seiten */
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.trust-primary {
+    display: flex; 
+    gap: 25px; /* Etwas mehr Abstand zwischen ISO und Google */
+    align-items: center;
+    margin-bottom: 20px; 
+    padding-bottom: 20px; 
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.iso-badge { 
+    display: flex; 
+    align-items: center; 
+    gap: 12px; 
+    font-size: 0.85rem; 
+    line-height: 1.3; 
+}
+.iso-badge img { 
+    width: 48px; /* Optimale Größe */
+    height: auto; 
+    border-radius: 2px; 
+    border: 1px solid white; 
+}
+.iso-badge strong { color: white; }
+
+.google-badge { 
+    text-decoration: none; 
+    color: #cbd5e1; 
+    font-size: 0.85rem; 
+    display: flex; 
+    flex-direction: column; 
+}
+.google-badge .stars { 
+    color: #fbbf24; 
+    letter-spacing: 2px; 
+    margin-bottom: 4px; 
+    font-size: 0.9rem; 
+}
+.google-badge:hover span { text-decoration: underline; color: white; }
+
+.trust-secondary { 
+    display: flex; 
+    flex-direction: column; 
+    align-items: flex-start; 
+    gap: 6px; 
+    font-size: 0.8rem; 
+    opacity: 0.8; 
+}
+.vema-logo {
+    width: 130px; /* Wieder etwas präsenter, damit es nicht verloren wirkt */
+    height: auto;
+    filter: brightness(0) invert(1);
+    opacity: 0.95;
+    margin-bottom: 2px;
+}
+
+.footer-bottom { text-align: center; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.85rem; color: #64748b; }
+
+/* Mobile Optimierung */
+@media (max-width: 900px) {
+    .footer-grid { grid-template-columns: 1fr; gap: 40px; }
+    .trust-primary { flex-direction: column; align-items: flex-start; }
+}

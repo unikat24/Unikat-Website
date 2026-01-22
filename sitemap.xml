@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://unikat24.github.io/Unikat-Website/index.html</loc>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://unikat24.github.io/Unikat-Website/ueber-unikat.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://unikat24.github.io/Unikat-Website/privat.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://unikat24.github.io/Unikat-Website/unternehmen.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://unikat24.github.io/Unikat-Website/schaden.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url><loc>https://unikat24.github.io/Unikat-Website/impressum.html</loc></url>
+  <url><loc>https://unikat24.github.io/Unikat-Website/datenschutz.html</loc></url>
+  <url><loc>https://unikat24.github.io/Unikat-Website/erstinformation.html</loc></url>
+  <url><loc>https://unikat24.github.io/Unikat-Website/privat-wohnen.html</loc></url>
+  <url><loc>https://unikat24.github.io/Unikat-Website/privat-gesundheit.html</loc></url>
+  <url><loc>https://unikat24.github.io/Unikat-Website/unternehmen-logistik.html</loc></url>
+  <url><loc>https://unikat24.github.io/Unikat-Website/unternehmen-immobilien.html</loc></url>
+</urlset>

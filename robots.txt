@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Danke-Seite nicht indexieren
+Disallow: /danke.html
+
+# Pfad zur Sitemap
+Sitemap: https://unikat24.github.io/Unikat-Website/sitemap.xml
