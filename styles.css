@@ -82,7 +82,7 @@ header {
 .nav-menu { display: flex; gap: 5px; align-items: center; height: 100%; }
 .nav-item { position: relative; height: 100%; display: flex; align-items: center; }
 .nav-link { padding: 0 15px; font-weight: 500; font-size: 0.95rem; color: var(--text-color); height: 100%; display: flex; align-items: center; transition: 0.2s; }
-.dropdown-menu { position: absolute; top: 100%; left: 0; background: var(--white); min-width: 260px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border-top: 2px solid var(--accent-color); display: none; flex-direction: column; padding: 10px 0; border-radius: 0 0 6px 6px; }
+.dropdown-menu { position: absolute; top: 100%; left: 0; background: var(--white); min-width: 280px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border-top: 2px solid var(--accent-color); display: none; flex-direction: column; padding: 10px 0; border-radius: 0 0 6px 6px; }
 .nav-item:hover .dropdown-menu { display: flex; animation: fadeIn 0.2s ease-out; }
 .dropdown-link { padding: 12px 20px; font-size: 0.9rem; color: var(--text-color); border-bottom: 1px solid #f1f5f9; }
 .dropdown-link:hover { background: #f1f5f9; color: var(--primary-color); padding-left: 25px; }
@@ -565,4 +565,332 @@ a.team-mail i {
 @media (max-width: 900px) {
     .footer-grid { grid-template-columns: 1fr; gap: 40px; }
     .trust-primary { flex-direction: column; align-items: flex-start; }
+}
+/* --- NEUE ELEMENTE (Feature Listen & Lead Magnet) --- */
+
+/* 1. Schicke Feature-Liste mit Icons (statt <ul>) */
+.feature-list { display: flex; flex-direction: column; gap: 25px; }
+.feature-item { display: flex; gap: 15px; align-items: flex-start; }
+.feature-icon {
+    width: 50px; height: 50px; flex-shrink: 0;
+    background: white; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--accent-color); font-size: 1.2rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05); border: 1px solid #f1f5f9;
+}
+.feature-content strong { display: block; color: var(--primary-color); margin-bottom: 4px; font-size: 1rem; }
+.feature-content p { margin: 0; font-size: 0.9rem; color: #64748b; line-height: 1.5; }
+
+/* 2. Farbige Vorteils-Box (Rechts) */
+.benefit-box {
+    background: var(--primary-color); color: white;
+    padding: 40px; border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(15, 44, 68, 0.2);
+    position: relative; overflow: hidden;
+}
+.benefit-box h3 { color: white; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 15px; margin-bottom: 20px; }
+.benefit-box ul { list-style: none; padding: 0; }
+.benefit-box li { position: relative; padding-left: 25px; margin-bottom: 12px; color: rgba(255,255,255,0.9); }
+.benefit-box li i { position: absolute; left: 0; top: 4px; color: var(--accent-color); }
+
+/* 3. Lead Magnet (Download Sektion) */
+.lead-section { background: linear-gradient(135deg, #0F2C44 0%, #1e3a52 100%); color: white; padding: 60px 0; }
+.lead-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 50px; align-items: center; }
+.lead-check { background: rgba(212, 175, 55, 0.2); color: var(--accent-color); width: 24px; height: 24px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; margin-right: 10px; font-size: 0.8rem; }
+.lead-form-box { background: white; padding: 30px; border-radius: 8px; color: var(--text-color); }
+.lead-input { width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.95rem; }
+
+/* Mobile Anpassung */
+@media (max-width: 900px) {
+    .lead-grid { grid-template-columns: 1fr; }
+}
+/* --- HEADER CLEANUP --- */
+
+/* 1. Top Bar (Dunkel) */
+.top-bar {
+    background-color: #020617; /* Dunkles Blau */
+    color: #cbd5e1;
+    font-size: 0.9rem;
+    padding: 8px 0;
+}
+.top-bar-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.top-contact, .top-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.contact-link, .top-link {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s;
+    display: flex; align-items: center; gap: 6px;
+}
+.contact-link:hover, .top-link:hover { color: white; }
+.whatsapp-link:hover { color: #25D366; } /* WhatsApp Grün bei Hover */
+
+/* Kleiner roter Button oben für Schaden */
+.btn-signal-small {
+    background: #ef4444;
+    color: white;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    text-decoration: none;
+    font-weight: 600;
+    display: flex; align-items: center; gap: 5px;
+}
+.btn-signal-small:hover { background: #dc2626; }
+
+
+/* 2. Haupt Header (Weiß) */
+.site-header {
+    background: white;
+    padding: 15px 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* 3. LOGO STEUERUNG (Wichtig!) */
+.logo-group {
+    display: flex;
+    align-items: center;
+    gap: 25px; /* Abstand zwischen Unikat und Vema */
+}
+.logo-main {
+    height: 55px; /* Fixe Höhe für Unikat */
+    width: auto;
+    display: block;
+}
+.logo-cert {
+    height: 35px; /* VEMA deutlich kleiner */
+    width: auto;
+    opacity: 0.8; /* Etwas dezenter */
+    filter: grayscale(100%); /* Optional: Grau machen, damit es nicht ablenkt? Wenn nicht gewünscht, Zeile löschen */
+    transition: 0.3s;
+}
+.logo-cert:hover {
+    filter: none;
+    opacity: 1;
+}
+
+/* 4. Navigation */
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+.nav-link {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 10px 0;
+    display: flex; align-items: center; gap: 5px;
+}
+.nav-link:hover { color: var(--primary-color); }
+.dropdown-icon { font-size: 0.75rem; opacity: 0.5; margin-top: 2px; }
+
+/* Kundenportal Button im Menü */
+.btn-sm {
+    padding: 8px 18px;
+    font-size: 0.9rem;
+}
+
+/* Dropdown Logik */
+.nav-item { position: relative; }
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%; left: 0;
+    background: white;
+    min-width: 240px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    padding: 10px 0;
+    z-index: 999;
+}
+.nav-item:hover .dropdown-menu { display: block; }
+.dropdown-link {
+    display: block;
+    padding: 8px 20px;
+    text-decoration: none;
+    color: #475569;
+    font-size: 0.95rem;
+}
+.dropdown-link:hover {
+    background: #f8fafc;
+    color: var(--primary-color);
+    padding-left: 25px; /* Kleiner Slide-Effekt */
+    transition: 0.2s;
+}
+
+/* Mobile Anpassung */
+@media (max-width: 1024px) {
+    .nav-menu { display: none; } /* Burger Menü Logik benötigt JS */
+    .burger-menu { display: block; font-size: 1.5rem; color: var(--primary-color); cursor: pointer; }
+    .top-bar { display: none; } /* Optional: Topbar auf Handy ausblenden um Platz zu sparen */
+}
+/* --- VERGLEICHS-GRAFIK (Kompakt & Zentriert) --- */
+.comparison-wrapper {
+    display: flex;
+    align-items: stretch;
+    justify-content: center; /* Hält alles schön in der Mitte */
+    gap: 15px; /* Etwas weniger Abstand als vorher */
+    margin: 40px auto;
+    flex-wrap: wrap;
+    max-width: 900px; /* WICHTIG: Begrenzt die Gesamtbreite */
+}
+
+.compare-card {
+    flex: 1;
+    min-width: 280px; /* Passt auch auf schmalere Handys */
+    max-width: 400px; /* WICHTIG: Die Karten werden nicht breiter als 400px */
+    width: 100%; /* Sicherheit für Mobile */
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    position: relative;
+    border-top: 5px solid #ccc; 
+    transition: transform 0.3s ease;
+}
+
+.compare-card:hover { transform: translateY(-5px); }
+
+/* Linke Karte: Das Problem (Gehalt) */
+.compare-card.bad {
+    border-top-color: #ef4444; /* Rot */
+    background: linear-gradient(to bottom, #fff, #fff5f5);
+}
+
+/* Rechte Karte: Die Lösung (bKV) */
+.compare-card.good {
+    border-top-color: #10b981; /* Grün */
+    background: linear-gradient(to bottom, #fff, #f0fdf4);
+    box-shadow: 0 10px 30px rgba(16, 185, 129, 0.15); /* Leichter grüner Glow */
+}
+
+.compare-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.compare-value {
+    font-size: 1.8rem; /* Etwas kleiner, wirkt eleganter */
+    font-weight: 800;
+    margin: 10px 0;
+    display: block;
+}
+
+.compare-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem; /* Pfeil etwas dezenter */
+    color: #cbd5e1;
+    padding: 0 5px;
+}
+
+/* Mobile Anpassung */
+@media (max-width: 768px) {
+    .compare-arrow { transform: rotate(90deg); margin: 10px 0; }
+}
+/* --- RISK GRID (andsafe Style) --- */
+.risk-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.risk-card {
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.risk-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    border-color: var(--primary-color);
+}
+
+.risk-icon-small {
+    font-size: 1.5rem;
+    color: var(--accent-color);
+    margin-bottom: 15px;
+}
+
+.risk-card h4 {
+    margin: 0 0 10px 0;
+    font-size: 1.1rem;
+    color: var(--primary-color);
+}
+
+.risk-card p {
+    font-size: 0.9rem;
+    color: #64748b;
+    line-height: 1.5;
+    margin: 0;
+}
+/* --- ACCESSIBILITY BOOSTER (Barrierefreiheit) --- */
+
+/* 1. Fokus-Indikator (Für Tastatur-Nutzer sichtbar machen) */
+/* Damit man sieht, wo man hintabbt */
+:focus-visible {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+/* 2. "Skip to Content" Link (Für Screenreader essentiell) */
+/* Dieser Link ist unsichtbar, bis man TAB drückt. Er erlaubt Blinden, das Menü zu überspringen. */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--primary-color);
+    color: white;
+    padding: 8px;
+    z-index: 2000;
+    transition: top 0.3s;
+}
+.skip-link:focus {
+    top: 0;
+}
+
+/* 3. Reduzierte Bewegung (Für Menschen mit Schwindel/Epilepsie) */
+/* Wenn der Nutzer im Betriebssystem "Bewegung reduzieren" eingestellt hat, schalten wir Animationen ab */
+@media (prefers-reduced-motion: reduce) {
+    *, ::before, ::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* 4. Kontrast-Verbesserung für Gold auf Weiß */
+/* Wenn Text sehr klein ist, ist Gold schwer lesbar. Wir dunkeln es hier minimal ab für Texte */
+p .accent-text, li .accent-text {
+    color: #b5952f; /* Etwas dunkleres Gold für bessere Lesbarkeit auf Weiß */
+}
+
+/* 5. Schriftgrößen-Sicherheit */
+/* Verhindert, dass Texte auf Handys zu klein werden */
+html {
+    -webkit-text-size-adjust: 100%;
 }
