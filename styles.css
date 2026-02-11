@@ -211,16 +211,51 @@ img.buero-bild-fix { width: 100% !important; height: 100% !important; object-fit
 /* --- MOBILE TWEAKS --- */
 @media (max-width: 900px) {
     .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
-    .nav-menu { display: none; position: absolute; top: var(--header-height); left: 0; right: 0; background: white; flex-direction: column; align-items: flex-start; padding: 20px; box-shadow: 0 5px 10px rgba(0,0,0,0.1); height: auto; }
+    
+    /* Mobile Navigation mit CSS-Fallback */
+    .nav-menu { 
+        display: none; 
+        position: absolute; 
+        top: var(--header-height); 
+        left: 0; 
+        right: 0; 
+        background: white; 
+        flex-direction: column; 
+        align-items: flex-start; 
+        padding: 20px; 
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1); 
+        height: auto; 
+        max-height: calc(100vh - var(--header-height));
+        overflow-y: auto;
+    }
     .nav-menu.active { display: flex; }
+    
+    /* Fallback: Wenn JS nicht lädt, zeige Menü bei :focus-within */
+    .nav-container:focus-within .nav-menu { display: flex; }
+    
     .nav-item { width: 100%; display: block; height: auto; }
-    .nav-link { padding: 15px 0; border-bottom: 1px solid #eee; width: 100%; display: block; }
-    .dropdown-menu { position: static; box-shadow: none; border-top: none; padding-left: 20px; display: none; }
-    .nav-item:hover .dropdown-menu { display: flex; }
+    .nav-link { 
+        padding: 15px 0; 
+        border-bottom: 1px solid #eee; 
+        width: 100%; 
+        display: block; 
+    }
+    
+    /* Dropdown auf Mobile: Click-to-expand */
+    .dropdown-menu { 
+        position: static; 
+        box-shadow: none; 
+        border-top: none; 
+        padding-left: 20px; 
+        display: none; 
+        background: #f8fafc;
+    }
+    .nav-item.open .dropdown-menu { display: flex; }
+    
     .burger-menu { display: block; }
     .hero h1 { font-size: 2.2rem; }
     .top-links { display: none; }
-    .team-img-gf {height: 400px !important; /* Auf dem Handy etwas kürzer für bessere Usability */    }
+    .team-img-gf { height: 400px !important; }
 }
 @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 #header-placeholder { display: contents; }
@@ -847,13 +882,96 @@ a.team-mail i {
     line-height: 1.5;
     margin: 0;
 }
+/* --- BREADCRUMBS --- */
+.breadcrumbs {
+    background: #f8fafc;
+    padding: 12px 0;
+    border-bottom: 1px solid #e2e8f0;
+    font-size: 0.9rem;
+}
+.breadcrumbs-list {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+.breadcrumbs-list li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.breadcrumbs-list a {
+    color: #64748b;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+.breadcrumbs-list a:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+.breadcrumbs-separator {
+    color: #cbd5e1;
+    font-size: 0.75rem;
+}
+.breadcrumbs-current {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+/* --- RELATED LINKS BOX --- */
+.related-links {
+    background: #f0f9ff;
+    border-left: 4px solid var(--accent-color);
+    padding: 25px;
+    border-radius: 0 8px 8px 0;
+    margin: 40px 0;
+}
+.related-links h3 {
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.related-links h3 i {
+    color: var(--accent-color);
+}
+.related-links-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px;
+    margin-top: 15px;
+}
+.related-link-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    background: white;
+    border-radius: 6px;
+    text-decoration: none;
+    color: var(--text-color);
+    transition: all 0.3s;
+    border: 1px solid #e2e8f0;
+}
+.related-link-item:hover {
+    border-color: var(--accent-color);
+    transform: translateX(5px);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+.related-link-item i {
+    color: var(--accent-color);
+    font-size: 1.1rem;
+}
+
 /* --- ACCESSIBILITY BOOSTER (Barrierefreiheit) --- */
 
 /* 1. Fokus-Indikator (Für Tastatur-Nutzer sichtbar machen) */
 /* Damit man sieht, wo man hintabbt */
 :focus-visible {
-    outline: 2px solid var(--accent-color);
-    outline-offset: 2px;
+    outline: 3px solid var(--accent-color);
+    outline-offset: 3px;
 }
 
 /* 2. "Skip to Content" Link (Für Screenreader essentiell) */
