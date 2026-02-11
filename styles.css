@@ -1012,3 +1012,43 @@ p .accent-text, li .accent-text {
 html {
     -webkit-text-size-adjust: 100%;
 }
+
+/* --- LEAD FORM STYLES (Professionell) --- */
+.form-group-small {
+    margin-bottom: 12px;
+}
+
+.lead-input {
+    width: 100%;
+    padding: 12px 15px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.lead-input:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    background: white;
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+}
+
+.lead-input::placeholder {
+    color: #94a3b8;
+}
+
+/* Checkbox Styling für Lead-Forms */
+.form-group-small input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: var(--accent-color);
+}
+
+.form-group-small label {
+    cursor: pointer;
+    line-height: 1.4;
+}

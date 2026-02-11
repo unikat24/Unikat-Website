@@ -158,11 +158,41 @@
 
                     <div class="lead-form-box">
                         <h4 style="margin-top: 0; color: var(--primary-color); margin-bottom: 15px;">Checkliste anfordern</h4>
-                        <form action="mailto:info@unikat24.de" method="post" enctype="text/plain">
-                            <input type="text" name="name" placeholder="Ihr Name" required class="lead-input">
-                            <input type="email" name="email" placeholder="E-Mail-Adresse" required class="lead-input">
-                            <button type="submit" class="btn btn-accent" style="width: 100%;">Kostenlos anfordern</button>
-                            <p style="font-size: 0.75rem; color: #94a3b8; margin-top: 10px; text-align: center;">Ihre Daten sind sicher. Kein Spam.</p>
+                        <form action="https://formspree.io/f/xykdklwz" method="POST">
+                            <!-- Honeypot gegen Spam -->
+                            <input type="text" name="_gotcha" style="display:none">
+                            
+                            <!-- Weiterleitung nach Absenden -->
+                            <input type="hidden" name="_next" value="https://unikat24.github.io/Unikat-Website/danke-logistik-download.html">
+                            
+                            <!-- Betreff für E-Mail -->
+                            <input type="hidden" name="_subject" value="Neuer Lead: Logistik Leitfaden">
+                            
+                            <div class="form-group-small">
+                                <input type="text" name="firma" placeholder="Firmenname / Spedition*" required class="lead-input">
+                            </div>
+                            
+                            <div class="form-group-small">
+                                <input type="text" name="name" placeholder="Ihr Name*" required class="lead-input">
+                            </div>
+                            
+                            <div class="form-group-small">
+                                <input type="email" name="email" placeholder="Geschäftliche E-Mail*" required class="lead-input">
+                            </div>
+                            
+                            <div class="form-group-small">
+                                <input type="tel" name="telefon" placeholder="Telefon (für Rückfragen)" class="lead-input">
+                            </div>
+                            
+                            <div class="form-group-small" style="display: flex; gap: 10px; align-items: start;">
+                                <input type="checkbox" name="datenschutz" id="datenschutz-logistik" required style="margin-top: 4px;">
+                                <label for="datenschutz-logistik" style="font-size: 0.85rem; color: #64748b;">
+                                    Ich stimme der Verarbeitung meiner Daten zu. <a href="datenschutz.html" style="text-decoration: underline;">Datenschutz</a>
+                                </label>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-accent" style="width: 100%;">Jetzt kostenlos anfordern</button>
+                            <p style="font-size: 0.75rem; color: #94a3b8; margin-top: 10px; text-align: center;">Sie werden nach dem Absenden direkt zum Download weitergeleitet.</p>
                         </form>
                     </div>
                 </div>
