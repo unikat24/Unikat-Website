@@ -35,7 +35,7 @@
             <p class="subline" style="margin: 0 auto; color: #cbd5e1;">Sie verwalten Millionenwerte. Wir kümmern uns als Versicherungsmakler um Ihr Versicherungs-Backoffice: Ausschreibung, Marktvergleich, Konditionenverhandlung und Schadenbegleitung. Unser Ziel: Weniger Reibung im Schadenfall, Minimierung des Unterversicherungsrisikos und saubere Abstimmung bei Regress und Beiratsschutz.</p>
             
             <div style="margin-top: 30px; display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
-                <a href="#lead-magnet" class="btn btn-primary">Kostenfreien Bestands-Check anfragen</a>
+                <a href="#audit-formular" class="btn btn-primary">Kostenfreien Bestands-Check anfragen</a>
                 <a href="https://outlook.office365.com/owa/calendar/UnikatVersicherungsmaklerGmbH@unikat24.de/bookings/" target="_blank" class="btn btn-accent">
                     Termin vereinbaren
                 </a>
@@ -231,6 +231,41 @@
                             <button type="submit" class="btn btn-accent" style="width: 100%;">Jetzt kostenlos anfordern</button>
                             <p style="font-size: 0.75rem; color: #94a3b8; margin-top: 10px; text-align: center;">Sie werden nach dem Absenden direkt zum Download weitergeleitet.</p>
                         </form>
+                        
+                        <script>
+                            document.getElementById('hausverwaltung-form').addEventListener('submit', function(e) {
+                                e.preventDefault();
+                                
+                                var form = this;
+                                var button = form.querySelector('button[type="submit"]');
+                                var originalText = button.innerHTML;
+                                
+                                button.disabled = true;
+                                button.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Wird gesendet...';
+                                
+                                var formData = new FormData(form);
+                                
+                                fetch(form.action, {
+                                    method: form.method,
+                                    body: formData,
+                                    headers: {
+                                        'Accept': 'application/json'
+                                    }
+                                }).then(function(response) {
+                                    if (response.ok) {
+                                        window.location.href = 'danke-immo.html';
+                                    } else {
+                                        alert('Es gab ein Problem beim Senden. Bitte versuchen Sie es erneut.');
+                                        button.disabled = false;
+                                        button.innerHTML = originalText;
+                                    }
+                                }).catch(function(error) {
+                                    alert('Es gab ein Problem beim Senden. Bitte versuchen Sie es erneut.');
+                                    button.disabled = false;
+                                    button.innerHTML = originalText;
+                                });
+                            });
+                        </script>
                     </div>
                 </div>
             </div>
@@ -314,6 +349,61 @@
     </div>
 </section>
 
+        <section id="audit-formular" class="section bg-white">
+            <div class="container">
+                <div class="text-center mb-20" style="max-width: 800px; margin: 0 auto 50px;">
+                    <span style="color: var(--accent-color); font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">Bestands-Check</span>
+                    <h2 class="section-title">Fordern Sie Ihren Bestands-Check an</h2>
+                    <p style="color: #64748b; font-size: 1.05rem;">Wir prüfen Ihre aktuellen Rahmenverträge auf Lücken (VGB 88 vs. 2025) und Einsparpotenzial. <strong>Kostenfrei für Hausverwalter ab 50 WE.</strong></p>
+                </div>
+
+                <div class="contact-form-wrapper" style="max-width: 700px;">
+                    <form id="immo-form" action="https://formspree.io/f/xykdklwz" method="POST">
+                        <!-- Honeypot gegen Spam -->
+                        <input type="text" name="_gotcha" style="display:none">
+                        
+                        <!-- Betreff für E-Mail -->
+                        <input type="hidden" name="_subject" value="Neuer Bestands-Check: Immobilien/Hausverwalter">
+                        
+                        <div class="form-group">
+                            <label class="form-label">Hausverwaltung / Firmenname *</label>
+                            <input type="text" name="firma" class="form-input" required placeholder="Ihre Verwaltungsgesellschaft">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Ansprechpartner *</label>
+                            <input type="text" name="name" class="form-input" required placeholder="Ihr Name">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">E-Mail *</label>
+                            <input type="email" name="email" class="form-input" required placeholder="ihre@email.de">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Anzahl Wohneinheiten (optional)</label>
+                            <input type="text" name="einheiten" class="form-input" placeholder="Ca. Anzahl Wohneinheiten (WE)">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Aktuelle Herausforderung (optional)</label>
+                            <textarea name="problem" class="form-textarea" placeholder="z.B. Sanierung, hohe Prämie, Schadenfall..."></textarea>
+                        </div>
+
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" name="datenschutz" id="datenschutz-immo" required style="margin-top: 4px;">
+                            <label for="datenschutz-immo">
+                                Ich stimme der Verarbeitung meiner Daten zu. <a href="datenschutz.html" style="text-decoration: underline;">Datenschutzerklärung</a>
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Kostenfreie Analyse anfordern</button>
+                        <p style="font-size: 0.85rem; color: #94a3b8; margin-top: 15px; text-align: center;">Wir melden uns innerhalb von 24 Stunden bei Ihnen.</p>
+                    </form>
+                </div>
+            </div>
+        </section>
+
         <aside class="related-links">
             <div class="container">
                 <h3><i class="fa-solid fa-link"></i> Weitere Gewerbelösungen</h3>
@@ -341,5 +431,43 @@
     
     <div id="footer-placeholder"></div>
     <script src="main.js"></script>
+    
+    <script>
+        document.getElementById('immo-form').addEventListener('submit', function(e) {
+            e.preventDefault(); // Verhindert das normale Absenden
+            
+            var form = this;
+            var button = form.querySelector('button[type="submit"]');
+            var originalText = button.innerHTML;
+            
+            // Button Lade-Status
+            button.disabled = true;
+            button.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Wird gesendet...';
+            
+            var formData = new FormData(form);
+            
+            fetch(form.action, {
+                method: form.method,
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(function(response) {
+                if (response.ok) {
+                    // ERFOLG: Manuelle Weiterleitung zur Danke-Seite
+                    window.location.href = 'danke.html';
+                } else {
+                    // FEHLER: Meldung anzeigen
+                    alert('Es gab ein Problem beim Senden. Bitte versuchen Sie es erneut.');
+                    button.disabled = false;
+                    button.innerHTML = originalText;
+                }
+            }).catch(function(error) {
+                alert('Es gab ein Problem beim Senden. Bitte versuchen Sie es erneut.');
+                button.disabled = false;
+                button.innerHTML = originalText;
+            });
+        });
+    </script>
 </body>
 </html>
