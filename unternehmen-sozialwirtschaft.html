@@ -183,9 +183,99 @@
                 </details>
             </div>
         </section>
+
+        <section class="section bg-light">
+            <div class="container">
+                <div class="text-center mb-20" style="max-width: 800px; margin: 0 auto 50px;">
+                    <span style="color: var(--accent-color); font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">Risiko-Check</span>
+                    <h2 class="section-title">Risiko-Check für soziale Einrichtungen</h2>
+                    <p style="color: #64748b; font-size: 1.05rem;">Wir prüfen Ihre Versicherungen auf Lücken und zeigen Ihnen, wo Haftungsrisiken lauern. <strong>Kostenfrei und unverbindlich.</strong></p>
+                </div>
+
+                <div class="contact-form-wrapper" style="max-width: 700px;">
+                    <form id="sozial-form" action="https://formspree.io/f/xykdklwz" method="POST">
+                        <!-- Honeypot gegen Spam -->
+                        <input type="text" name="_gotcha" style="display:none">
+                        
+                        <!-- Betreff für E-Mail -->
+                        <input type="hidden" name="_subject" value="Neuer Lead: Sozialwirtschaft">
+                        
+                        <div class="form-group">
+                            <label class="form-label">Einrichtung / Träger *</label>
+                            <input type="text" name="firma" class="form-input" required placeholder="Name Ihrer Einrichtung">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Ansprechpartner *</label>
+                            <input type="text" name="name" class="form-input" required placeholder="Ihr Name">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">E-Mail *</label>
+                            <input type="email" name="email" class="form-input" required placeholder="ihre@email.de">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Anzahl Mitarbeiter (optional)</label>
+                            <input type="text" name="mitarbeiter" class="form-input" placeholder="Ca. Anzahl Mitarbeiter">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Ihre Frage / Anliegen (optional)</label>
+                            <textarea name="anliegen" class="form-textarea" placeholder="z.B. D&O für Vorstand, Cyber-Schutz, Fuhrpark..."></textarea>
+                        </div>
+
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" name="datenschutz" id="datenschutz-sozial" required style="margin-top: 4px;">
+                            <label for="datenschutz-sozial">
+                                Ich stimme der Verarbeitung meiner Daten zu. <a href="datenschutz.html" style="text-decoration: underline;">Datenschutzerklärung</a>
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Kostenfreien Risiko-Check anfragen</button>
+                        <p style="font-size: 0.85rem; color: #94a3b8; margin-top: 15px; text-align: center;">Wir melden uns innerhalb von 24 Stunden bei Ihnen.</p>
+                    </form>
+                </div>
+            </div>
+        </section>
     </main>
     
     <div id="footer-placeholder"></div>
     <script src="main.js"></script>
+    
+    <script>
+        document.getElementById('sozial-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            var form = this;
+            var button = form.querySelector('button[type="submit"]');
+            var originalText = button.innerHTML;
+            
+            button.disabled = true;
+            button.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Wird gesendet...';
+            
+            var formData = new FormData(form);
+            
+            fetch(form.action, {
+                method: form.method,
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(function(response) {
+                if (response.ok) {
+                    window.location.href = 'danke.html';
+                } else {
+                    alert('Es gab ein Problem beim Senden. Bitte versuchen Sie es erneut.');
+                    button.disabled = false;
+                    button.innerHTML = originalText;
+                }
+            }).catch(function(error) {
+                alert('Es gab ein Problem beim Senden. Bitte versuchen Sie es erneut.');
+                button.disabled = false;
+                button.innerHTML = originalText;
+            });
+        });
+    </script>
 </body>
 </html>

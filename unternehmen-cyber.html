@@ -148,6 +148,66 @@
             </div>
         </section>
 
+        <section class="section bg-light">
+            <div class="container">
+                <div class="text-center mb-20" style="max-width: 800px; margin: 0 auto 50px;">
+                    <span style="color: var(--accent-color); font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">Cyber-Risiko Audit</span>
+                    <h2 class="section-title">Cyber-Risiko Audit anfragen</h2>
+                    <p style="color: #64748b; font-size: 1.05rem;">Wir prüfen Ihre IT-Sicherheit und finden den passenden Cyber-Schutz für Ihr Unternehmen. <strong>Kostenfrei und unverbindlich.</strong></p>
+                </div>
+
+                <div class="contact-form-wrapper" style="max-width: 700px;">
+                    <form id="cyber-form" action="https://formspree.io/f/xykdklwz" method="POST">
+                        <!-- Honeypot gegen Spam -->
+                        <input type="text" name="_gotcha" style="display:none">
+                        
+                        <!-- Betreff für E-Mail -->
+                        <input type="hidden" name="_subject" value="Neuer Lead: Cyber-Versicherung">
+                        
+                        <div class="form-group">
+                            <label class="form-label">Firmenname *</label>
+                            <input type="text" name="firma" class="form-input" required placeholder="Ihr Unternehmen">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Ansprechpartner *</label>
+                            <input type="text" name="name" class="form-input" required placeholder="Ihr Name">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">E-Mail *</label>
+                            <input type="email" name="email" class="form-input" required placeholder="ihre@email.de">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Cyber-Vorfall?</label>
+                            <select name="vorschaden" class="form-input" style="cursor: pointer; color: #334155;">
+                                <option value="" disabled selected>Gab es bereits einen Cyber-Vorfall?</option>
+                                <option value="Nein">Nein, bisher keine Vorfälle</option>
+                                <option value="Ja">Ja, es gab bereits Vorfälle</option>
+                                <option value="Unbekannt">Unbekannt / Unsicher</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Ihre Frage / Anliegen (optional)</label>
+                            <textarea name="anliegen" class="form-textarea" placeholder="z.B. Ransomware-Schutz, DSGVO-Bußgelder, Incident Response..."></textarea>
+                        </div>
+
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" name="datenschutz" id="datenschutz-cyber" required style="margin-top: 4px;">
+                            <label for="datenschutz-cyber">
+                                Ich stimme der Verarbeitung meiner Daten zu. <a href="datenschutz.html" style="text-decoration: underline;">Datenschutzerklärung</a>
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Kostenfreies Cyber-Audit anfragen</button>
+                        <p style="font-size: 0.85rem; color: #94a3b8; margin-top: 15px; text-align: center;">Wir melden uns innerhalb von 24 Stunden bei Ihnen.</p>
+                    </form>
+                </div>
+            </div>
+        </section>
+
         <section class="cta-banner">
             <div class="container">
                 <h2>Haben Sie einen Notfallplan in der Schublade?</h2>
@@ -160,5 +220,40 @@
 
     <div id="footer-placeholder"></div>
     <script src="main.js"></script>
+    
+    <script>
+        document.getElementById('cyber-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            var form = this;
+            var button = form.querySelector('button[type="submit"]');
+            var originalText = button.innerHTML;
+            
+            button.disabled = true;
+            button.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Wird gesendet...';
+            
+            var formData = new FormData(form);
+            
+            fetch(form.action, {
+                method: form.method,
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(function(response) {
+                if (response.ok) {
+                    window.location.href = 'danke.html';
+                } else {
+                    alert('Es gab ein Problem beim Senden. Bitte versuchen Sie es erneut.');
+                    button.disabled = false;
+                    button.innerHTML = originalText;
+                }
+            }).catch(function(error) {
+                alert('Es gab ein Problem beim Senden. Bitte versuchen Sie es erneut.');
+                button.disabled = false;
+                button.innerHTML = originalText;
+            });
+        });
+    </script>
 </body>
 </html>
