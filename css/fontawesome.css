@@ -1,0 +1,152 @@
+/* FontAwesome Local (DSGVO-konform) - Vollständig mit Icon-Mapping */
+
+/* @font-face Definitionen */
+@font-face {
+    font-family: "Font Awesome 6 Free";
+    font-style: normal;
+    font-weight: 900;
+    font-display: swap;
+    src: url("../fonts/fa-solid-900.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Font Awesome 6 Free";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("../fonts/fa-regular-400.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Font Awesome 6 Brands";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("../fonts/fa-brands-400.woff2") format("woff2");
+}
+
+/* Basis-Klassen */
+.fa, .fas, .fa-solid {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+}
+
+.far, .fa-regular {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 400;
+}
+
+.fab, .fa-brands {
+    font-family: "Font Awesome 6 Brands";
+    font-weight: 400;
+}
+
+.fa, .fas, .far, .fab, .fa-solid, .fa-regular, .fa-brands {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    line-height: 1;
+    text-rendering: auto;
+}
+
+/* Icon-Mapping (Unicode-Codes) */
+.fa-phone:before { content: "\f095"; }
+.fa-whatsapp:before { content: "\f232"; }
+.fa-calendar-check:before { content: "\f274"; }
+.fa-triangle-exclamation:before { content: "\f071"; }
+.fa-bars:before { content: "\f0c9"; }
+.fa-chevron-down:before { content: "\f078"; }
+.fa-check:before { content: "\f00c"; }
+.fa-users:before { content: "\f0c0"; }
+.fa-certificate:before { content: "\f0a3"; }
+.fa-star:before { content: "\f005"; }
+.fa-user-shield:before { content: "\f505"; }
+.fa-briefcase:before { content: "\f0b1"; }
+.fa-arrow-right:before { content: "\f061"; }
+.fa-truck-fast:before { content: "\f48b"; }
+.fa-city:before { content: "\f64f"; }
+.fa-hand-holding-heart:before { content: "\f4be"; }
+.fa-industry:before { content: "\f275"; }
+.fa-shield-halved:before { content: "\f3ed"; }
+.fa-heart:before { content: "\f004"; }
+.fa-envelope:before { content: "\f0e0"; }
+.fa-linkedin:before { content: "\f08c"; }
+.fa-facebook:before { content: "\f09a"; }
+.fa-google:before { content: "\f1a0"; }
+.fa-file-pdf:before { content: "\f1c1"; }
+.fa-arrow-up-right-from-square:before { content: "\f08e"; }
+.fa-house:before { content: "\f015"; }
+.fa-gavel:before { content: "\f0e3"; }
+.fa-truck-moving:before { content: "\f4df"; }
+.fa-truck-front:before { content: "\e2b7"; }
+.fa-boxes-packing:before { content: "\e4c7"; }
+.fa-leaf:before { content: "\f06c"; }
+.fa-trailer:before { content: "\e041"; }
+.fa-link:before { content: "\f0c1"; }
+.fa-user-nurse:before { content: "\f82f"; }
+.fa-hands-holding-child:before { content: "\e4fa"; }
+.fa-handcuffs:before { content: "\e4f8"; }
+.fa-file-shield:before { content: "\e256"; }
+.fa-umbrella:before { content: "\f0e9"; }
+.fa-bicycle:before { content: "\f206"; }
+.fa-laptop-house:before { content: "\e066"; }
+.fa-house-crack:before { content: "\e3b1"; }
+.fa-solar-panel:before { content: "\f5ba"; }
+.fa-trowel-bricks:before { content: "\e58a"; }
+.fa-store:before { content: "\f54e"; }
+.fa-fire-burner:before { content: "\e4f1"; }
+.fa-gears:before { content: "\f085"; }
+.fa-laptop-code:before { content: "\f5fc"; }
+.fa-magnifying-glass:before { content: "\f002"; }
+.fa-lightbulb:before { content: "\f0eb"; }
+.fa-money-bill-transfer:before { content: "\e528"; }
+.fa-arrow-trend-down:before { content: "\e097"; }
+.fa-circle-arrow-right:before { content: "\f0a9"; }
+.fa-heart-pulse:before { content: "\f21e"; }
+.fa-arrow-trend-up:before { content: "\e098"; }
+.fa-piggy-bank:before { content: "\f4d3"; }
+.fa-hourglass-half:before { content: "\f252"; }
+.fa-user-lock:before { content: "\f502"; }
+.fa-stopwatch:before { content: "\f2f2"; }
+.fa-skull-crossbones:before { content: "\f714"; }
+.fa-file-contract:before { content: "\f56c"; }
+.fa-money-bill-trend-up:before { content: "\e529"; }
+.fa-kit-medical:before { content: "\f479"; }
+.fa-graduation-cap:before { content: "\f19d"; }
+.fa-shield-cat:before { content: "\e572"; }
+.fa-database:before { content: "\f1c0"; }
+.fa-water:before { content: "\f773"; }
+.fa-headset:before { content: "\f590"; }
+.fa-user-slash:before { content: "\f506"; }
+.fa-biohazard:before { content: "\f780"; }
+.fa-clock-rotate-left:before { content: "\f1da"; }
+.fa-circle-check:before { content: "\f058"; }
+.fa-clipboard-check:before { content: "\f46c"; }
+.fa-magnifying-glass-chart:before { content: "\e522"; }
+.fa-file-signature:before { content: "\f573"; }
+.fa-file-lines:before { content: "\f15c"; }
+.fa-rotate:before { content: "\f2f1"; }
+.fa-gift:before { content: "\f06b"; }
+.fa-building-columns:before { content: "\f19c"; }
+.fa-house-flag:before { content: "\e50d"; }
+.fa-handshake:before { content: "\f2b5"; }
+.fa-map-location-dot:before { content: "\f5a0"; }
+.fa-spinner:before { content: "\f110"; }
+.fa-user:before { content: "\f007"; }
+.fa-network-wired:before { content: "\f6ff"; }
+.fa-award:before { content: "\f559"; }
+.fa-chart-line:before { content: "\f201"; }
+.fa-phone-volume:before { content: "\f2a0"; }
+.fa-pen-nib:before { content: "\f5ad"; }
+
+/* Animationen */
+.fa-spin {
+    animation: fa-spin 2s infinite linear;
+}
+
+@keyframes fa-spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
