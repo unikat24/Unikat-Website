@@ -185,6 +185,9 @@ header {
     display: flex;
     flex-direction: column;
     position: relative;
+    overflow: hidden; /* Verhindert Überlauf */
+    padding-bottom: 0; /* Kein Padding unten */
+    margin-bottom: 0; /* Kein Margin unten */
 }
 
 .hero-main-wrapper {
@@ -192,23 +195,41 @@ header {
     flex: 1;
     position: relative;
     min-height: 0;
-    background: linear-gradient(135deg, rgba(15, 44, 68, 0.98) 0%, rgba(10, 31, 46, 0.98) 100%); /* Gleicher Gradient wie Trust-Bar */
+    overflow: hidden; /* Verhindert Überlauf */
 }
 
 /* Hauptbereich: Gewerbe (Full Width mit Platz für Sidebar) */
 .hero-col-b2b-full {
     flex: 1;
-    background-image: 
-        linear-gradient(135deg, rgba(15, 44, 68, 0.95) 0%, rgba(10, 31, 46, 0.97) 50%, rgba(5, 21, 34, 0.98) 100%), /* Dunkler Overlay für Lesbarkeit */
-        url('img/hero-rostock-bg.webp');
+    background-image: url('img/hero-rostock-bg.webp');
     background-size: cover;
     background-position: center;
     color: white;
     display: flex;
     align-items: center;
-    justify-content: center; /* Zentriert für bessere Optik */
+    justify-content: center;
     padding: 80px 60px;
     position: relative;
+}
+
+/* OVERLAY - Hart fixiert auf 100% */
+.hero-col-b2b-full::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(15, 44, 68, 0.95) 0%, rgba(10, 31, 46, 0.97) 50%, rgba(5, 21, 34, 0.98) 100%);
+    z-index: 1;
+}
+
+/* Content über dem Overlay */
+.hero-col-b2b-full .hero-col-content {
+    position: relative;
+    z-index: 2;
 }
 
 /* Sidebar: Privat (Dezent, kompakt, professionell) */
@@ -364,7 +385,7 @@ header {
 
 /* --- NEUE GLOBALE TRUST BAR --- */
 .hero-trust-bar {
-    background: linear-gradient(135deg, rgba(15, 44, 68, 0.98) 0%, rgba(10, 31, 46, 0.98) 100%); /* Gleicher Gradient wie Hero */
+    background: linear-gradient(135deg, rgba(15, 44, 68, 0.98) 0%, rgba(10, 31, 46, 0.98) 100%);
     color: white;
     padding: 20px 0;
     display: flex;
@@ -372,7 +393,9 @@ header {
     align-items: center;
     gap: 50px;
     flex-wrap: wrap;
-    margin-top: -8px; /* Erhöht auf 8px für pixelgenauen Übergang bei allen Zoom-Stufen */
+    margin-top: -2px; /* Minimal überlappen für nahtlosen Übergang */
+    position: relative;
+    z-index: 10; /* Über dem Hero */
 }
 
 .hero-trust-item {
@@ -1756,5 +1779,44 @@ html {
     
     .cookie-banner-text {
         text-align: center;
+    }
+}
+
+/* --- ON-SCROLL ANIMATIONS (Premium Fade-In-Up) --- */
+
+/* Startzustand: Unsichtbar und leicht nach unten versetzt */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Endzustand: Sichtbar und an der richtigen Position */
+.animate-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Staggering-Effekt: La-Ola-Welle für nebeneinander stehende Elemente */
+.process-step:nth-child(1) { transition-delay: 0s; }
+.process-step:nth-child(2) { transition-delay: 0.1s; }
+.process-step:nth-child(3) { transition-delay: 0.2s; }
+.process-step:nth-child(4) { transition-delay: 0.3s; }
+
+.review-static-card:nth-child(1) { transition-delay: 0s; }
+.review-static-card:nth-child(2) { transition-delay: 0.1s; }
+.review-static-card:nth-child(3) { transition-delay: 0.2s; }
+
+.risk-card:nth-child(1) { transition-delay: 0s; }
+.risk-card:nth-child(2) { transition-delay: 0.1s; }
+.risk-card:nth-child(3) { transition-delay: 0.2s; }
+.risk-card:nth-child(4) { transition-delay: 0.3s; }
+
+/* Respektiere Nutzer-Präferenzen: Keine Animationen bei prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+    .animate-on-scroll {
+        opacity: 1;
+        transform: none;
+        transition: none;
     }
 }
