@@ -32,6 +32,7 @@
     <link rel="preload" href="fonts/inter-v20-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="fonts/inter-v20-latin-700.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" as="image" href="img/hero-rostock-bg.webp" fetchpriority="high">
 <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="css/fontawesome.css">
 <style>
@@ -137,6 +138,79 @@
       ]
     }
     </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Arbeiten Sie als Versicherungsmakler oder als Versicherungsvertreter?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Wir arbeiten als Versicherungsmakler. Das bedeutet: Wir sind nicht an einen Versicherer gebunden und vertreten Ihre Interessen gegenüber Versicherern. Details stehen in unserer Erstinformation."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Für welche Unternehmen arbeiten Sie schwerpunktmäßig?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Unsere Schwerpunkte sind Hausverwaltungen und WEG-Verwalter, Speditionen und Logistikbetriebe sowie Immobilienunternehmen in Rostock und MV. Wir betreuen außerdem Handwerk, Handel und mittelständische Gewerbebetriebe, Sozial- und Pflegeeinrichtungen sowie Unternehmen zur betrieblichen Altersvorsorge."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Was kostet die erste Analyse unserer Verträge?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Der Erstcheck ist unverbindlich. In der Regel arbeiten wir auf Courtage-Basis: Wir werden vom Versicherer vergütet, ohne dass Ihnen eine separate Rechnung entsteht. Details klären wir transparent im Erstgespräch."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wie läuft der Einstieg ab?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Erstes Kennenlerngespräch (ca. 60 Minuten, telefonisch, per Video oder bei uns im Büro bzw. bei Ihnen vor Ort), dann Unterlagenabfrage, dann strukturierter Überblick mit Prioritätenliste und Vorschlag fürs Vorgehen."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wir haben bereits einen Betreuer. Wie läuft ein Wechsel ab?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Der Wechsel läuft immer gleich ab, egal ob Sie bisher bei einem Versicherungsvertreter, einer Agentur oder einem anderen Makler versichert waren: Sie stellen uns eine Maklervollmacht aus. Wir übernehmen die gesamte Kommunikation mit dem bisherigen Betreuer und den Versicherern. Bestehende Verträge laufen weiter, bis wir gemeinsam entschieden haben, was angepasst werden soll. Für Sie entsteht kein administrativer Aufwand."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Was passiert im Schadenfall?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Wir begleiten den Schaden aktiv: Koordination der Kommunikation mit dem Versicherer, Abstimmung mit Gutachtern, Status-Updates. Die Regulierungsentscheidung trifft der Versicherer, wir vertreten dabei Ihre Interessen."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Haben wir immer dieselbe Ansprechperson?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. Jeder Mandant hat eine feste Ansprechperson. Bei Abwesenheit gibt es eine informierte Vertretung, die den Bestand kennt."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Was bedeutet die ISO 9001 Zertifizierung für uns als Kunden?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ISO 9001 steht für dokumentierte Prozesse und regelmäßige Qualitätsprüfungen. Für Sie bedeutet das: nachvollziehbare Abläufe und klare Zuständigkeiten, unabhängig davon, wer bei uns Ihr Ansprechpartner ist."
+          }
+        }
+      ]
+    }
+    </script>
 </head>
 <body>
 
@@ -225,7 +299,7 @@
                     <div class="hero-col-content">
                         <span class="hero-label">Für Unternehmen</span>
                         <h1>Versicherungsmakler für Gewerbe & Immobilien in Rostock</h1>
-                        <p class="hero-makler-rolle">Versicherungsmakler, nicht an einen Versicherer gebunden. Wir vertreten Ihre Interessen gegenüber Versicherern.</p>
+                        <p class="hero-makler-rolle">Nicht an einen Versicherer gebunden. Wir vertreten Ihre Interessen.</p>
                         <p class="hero-subline">Für Hausverwaltungen, WEG-Verwalter und Speditionen in MV: feste Ansprechpartner, strukturierte Bestandsprüfung und persönliche Schadenbegleitung.</p>
                         
                         <a href="https://outlook.office365.com/owa/calendar/UnikatVersicherungsmaklerGmbH@unikat24.de/bookings/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-hero">
@@ -479,18 +553,18 @@
 
         <!-- GEO-Strategie: Einzugsgebiet (Local Authority) -->
         <section class="section bg-light" style="padding: 50px 0;">
-            <div class="container" style="max-width: 900px;">
-                <h2 style="text-align: center; font-size: 1.8rem; margin-bottom: 20px; color: var(--primary-color);">
-                    <i class="fa-solid fa-map-location-dot" style="color: var(--accent-color); margin-right: 10px;"></i>
-                    Versicherungsmakler in Rostock und Mecklenburg-Vorpommern
-                </h2>
-                <p style="text-align: center; font-size: 1.05rem; line-height: 1.7; color: #475569; max-width: 750px; margin: 0 auto 20px;">
-                    Unikat hat seinen Sitz in der August-Bebel-Straße in Rostock und betreut Unternehmen in ganz Mecklenburg-Vorpommern. Für Hausverwaltungen und Speditionen aus Hamburg oder Berlin, die Bestände oder Routen in der Region haben, sind wir der regionale Ansprechpartner.
-                </p>
-                <p style="text-align: center; font-size: 1rem; line-height: 1.6; color: #64748b; max-width: 750px; margin: 0 auto;">
-                    Wir kennen die regionalen Risikoprofile und sind bei Schadensfällen mit festen Ansprechpartnern und klaren Eskalationswegen erreichbar. Vor-Ort-Termine in MV sind nach Bedarf möglich.
-                </p>
-            </div>
+          <div class="container" style="max-width: 900px;">
+            <h2 style="text-align: center; font-size: 1.8rem; margin-bottom: 20px; color: var(--primary-color);">
+              <i class="fa-solid fa-map-location-dot" style="color: var(--accent-color); margin-right: 10px;"></i>
+              Versicherungsmakler in Norddeutschland
+            </h2>
+            <p style="text-align: center; font-size: 1.05rem; line-height: 1.7; color: #475569; max-width: 750px; margin: 0 auto 20px;">
+              Mit Sitz in Rostock betreuen wir Unternehmen in Mecklenburg-Vorpommern und Norddeutschland. Im Rostocker Umland sind wir regelmäßig vor Ort, zum Beispiel rund um Bad Doberan, Kühlungsborn, Güstrow und Laage.
+            </p>
+            <p style="text-align: center; font-size: 1rem; line-height: 1.6; color: #64748b; max-width: 750px; margin: 0 auto;">
+              Für Hausverwaltungen und Speditionen aus Hamburg oder Lübeck, die Bestände oder Routen in MV haben, sind wir der Ansprechpartner in der Region. Schadensfälle begleiten wir persönlich, mit festen Ansprechpartnern und Vor-Ort-Terminen nach Bedarf.
+            </p>
+          </div>
         </section>
 
         <section class="section bg-white">
