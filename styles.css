@@ -1820,3 +1820,29 @@ html {
         transition: none;
     }
 }
+
+/* --- FAQ STYLES --- */
+.faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.faq-item {
+    padding: 24px 0;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.faq-item h3 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--primary-color);
+}
+
+.faq-item p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #475569;
+    margin: 0;
+}
