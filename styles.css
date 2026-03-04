@@ -1821,58 +1821,108 @@ html {
     }
 }
 
-/* --- FAQ STYLES (Accordion mit <details>) --- */
+/* --- FAQ STYLES (Card-Style wie Logistik-Seite) --- */
 .faq-list {
-  border-top: 1px solid #e2e8f0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
 }
 
 .faq-item {
-  border-bottom: 1px solid #e2e8f0;
+  background: var(--white);
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  transition: border-color 0.3s;
+}
+
+.faq-item[open] {
+  border-color: var(--accent-color);
+}
+
+.faq-item > summary {
+  font-weight: 600;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--primary-color);
+  cursor: pointer;
   padding: 0;
 }
 
-.faq-item summary {
-  cursor: pointer;
-  list-style: none;
-  font-weight: 600;
-  font-size: 1.05rem;
-  color: var(--primary-color);
-  position: relative;
-  padding: 18px 36px 18px 0;
-  line-height: 1.4;
-}
-
-.faq-item summary::-webkit-details-marker {
+.faq-item > summary::-webkit-details-marker {
   display: none;
 }
 
-.faq-item summary::after {
-  content: "+";
-  position: absolute;
-  right: 4px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 1.3rem;
-  font-weight: 700;
+.faq-item > summary::after {
+  content: '+';
+  font-size: 1.5rem;
   color: var(--accent-color);
-  line-height: 1;
+  flex-shrink: 0;
+  margin-left: 16px;
 }
 
-.faq-item[open] summary::after {
-  content: "–";
+details:not([open]).faq-item > summary::after {
+  content: '+' !important;
 }
 
-.faq-item summary:hover {
+details[open].faq-item > summary::after {
+  content: '-' !important;
+}
+
+.faq-item > summary:hover {
   color: var(--accent-color);
-}
-
-.faq-answer {
-  padding: 0 0 18px 0;
 }
 
 .faq-answer p {
-  margin: 0;
+  margin-top: 15px;
+  color: var(--text-color);
+  border-top: 1px solid #f1f5f9;
+  padding-top: 15px;
+  margin-bottom: 0;
   font-size: 0.95rem;
   line-height: 1.7;
-  color: #475569;
+}
+
+/* "Weitere Fragen" Toggle */
+.faq-more-toggle {
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin-bottom: 0;
+  cursor: pointer;
+}
+
+.faq-more-toggle > summary.faq-more-summary {
+  list-style: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--accent-color);
+  padding: 14px 0;
+  cursor: pointer;
+}
+
+.faq-more-toggle > summary.faq-more-summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-more-toggle > summary.faq-more-summary::after {
+  content: '+';
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-left: 8px;
+}
+
+.faq-more-toggle[open] > summary.faq-more-summary::after {
+  content: '–';
+}
+
+.faq-more-content {
+  padding-top: 4px;
 }
