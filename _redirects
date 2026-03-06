@@ -1,0 +1,84 @@
+# 301 Redirects für Unikat Website Relaunch
+# Format: alte-url neue-url 301
+# Wichtig: Case-insensitive, mit und ohne trailing slash
+
+# GEWERBEKUNDEN -> UNTERNEHMEN
+/gewerbekunden /unternehmen.html 301
+/gewerbekunden/ /unternehmen.html 301
+/Gewerbekunden /unternehmen.html 301
+/Gewerbekunden/ /unternehmen.html 301
+
+/gewerbekunden/immobilienwirtschaft /unternehmen-immobilien.html 301
+/gewerbekunden/immobilienwirtschaft/ /unternehmen-immobilien.html 301
+
+/gewerbekunden/kfz-flotten /unternehmen-logistik.html 301
+/gewerbekunden/kfz-flotten/ /unternehmen-logistik.html 301
+
+/gewerbekunden/firmen-gewerbe-handel /unternehmen-mittelstand.html 301
+/gewerbekunden/firmen-gewerbe-handel/ /unternehmen-mittelstand.html 301
+
+/gewerbekunden/betriebliche-altersversorgung /unternehmen-versorgung.html 301
+/gewerbekunden/betriebliche-altersversorgung/ /unternehmen-versorgung.html 301
+
+/gewerbekunden/langzeitarbeitskonten /unternehmen-versorgung.html 301
+/gewerbekunden/langzeitarbeitskonten/ /unternehmen-versorgung.html 301
+
+# PRIVATKUNDEN -> PRIVAT
+/privatkunden /privat.html 301
+/privatkunden/ /privat.html 301
+/Privatkunden /privat.html 301
+/Privatkunden/ /privat.html 301
+
+# UNTERNEHMEN (alte Über-Uns Sektion) -> UEBER-UNIKAT
+/unternehmen /ueber-unikat.html 301
+/unternehmen/ /ueber-unikat.html 301
+/Unternehmen /ueber-unikat.html 301
+/Unternehmen/ /ueber-unikat.html 301
+
+/unternehmen/historie /ueber-unikat.html 301
+/unternehmen/historie/ /ueber-unikat.html 301
+
+/unternehmen/wirueberuns /ueber-unikat.html 301
+/unternehmen/wirueberuns/ /ueber-unikat.html 301
+
+/unternehmen/wirueberuns/arbeitsweise /ueber-unikat.html 301
+/unternehmen/wirueberuns/arbeitsweise/ /ueber-unikat.html 301
+
+/unternehmen/wirueberuns/team /ueber-unikat.html 301
+/unternehmen/wirueberuns/team/ /ueber-unikat.html 301
+
+/unternehmen/wirueberuns/zertifizierte-qualitaet /ueber-unikat.html 301
+/unternehmen/wirueberuns/zertifizierte-qualitaet/ /ueber-unikat.html 301
+
+# PFLICHTSEITEN
+/schadenmeldung /schaden.html 301
+/schadenmeldung/ /schaden.html 301
+/Schadenmeldung /schaden.html 301
+/Schadenmeldung/ /schaden.html 301
+
+/erstinformationen /erstinformation.html 301
+/erstinformationen/ /erstinformation.html 301
+/Erstinformationen /erstinformation.html 301
+/Erstinformationen/ /erstinformation.html 301
+
+/impressum /impressum.html 301
+/impressum/ /impressum.html 301
+/Impressum /impressum.html 301
+/Impressum/ /impressum.html 301
+
+/datenschutz /datenschutz.html 301
+/datenschutz/ /datenschutz.html 301
+/Datenschutz /datenschutz.html 301
+/Datenschutz/ /datenschutz.html 301
+
+# WECHSEL-SEITE -> UNTERNEHMEN
+/Wechsel /unternehmen.html 301
+/Wechsel/ /unternehmen.html 301
+/wechsel /unternehmen.html 301
+/wechsel/ /unternehmen.html 301
+
+# KONTAKT -> KONTAKT.HTML
+/kontakt /kontakt.html 301
+/kontakt/ /kontakt.html 301
+/Kontakt /kontakt.html 301
+/Kontakt/ /kontakt.html 301

@@ -1,0 +1,36 @@
+# .htaccess für Apache Server
+# 301 Redirects für Unikat Website Relaunch
+
+RewriteEngine On
+RewriteBase /
+
+# GEWERBEKUNDEN -> UNTERNEHMEN
+RewriteRule ^[Gg]ewerbekunden/?$ /unternehmen.html [R=301,L,NC]
+RewriteRule ^[Gg]ewerbekunden/immobilienwirtschaft/?$ /unternehmen-immobilien.html [R=301,L,NC]
+RewriteRule ^[Gg]ewerbekunden/kfz-flotten/?$ /unternehmen-logistik.html [R=301,L,NC]
+RewriteRule ^[Gg]ewerbekunden/firmen-gewerbe-handel/?$ /unternehmen-mittelstand.html [R=301,L,NC]
+RewriteRule ^[Gg]ewerbekunden/betriebliche-altersversorgung/?$ /unternehmen-versorgung.html [R=301,L,NC]
+RewriteRule ^[Gg]ewerbekunden/langzeitarbeitskonten/?$ /unternehmen-versorgung.html [R=301,L,NC]
+
+# PRIVATKUNDEN -> PRIVAT
+RewriteRule ^[Pp]rivatkunden/?$ /privat.html [R=301,L,NC]
+
+# UNTERNEHMEN (alte Über-Uns Sektion) -> UEBER-UNIKAT
+RewriteRule ^[Uu]nternehmen/?$ /ueber-unikat.html [R=301,L,NC]
+RewriteRule ^[Uu]nternehmen/historie/?$ /ueber-unikat.html [R=301,L,NC]
+RewriteRule ^[Uu]nternehmen/wirueberuns/?$ /ueber-unikat.html [R=301,L,NC]
+RewriteRule ^[Uu]nternehmen/wirueberuns/arbeitsweise/?$ /ueber-unikat.html [R=301,L,NC]
+RewriteRule ^[Uu]nternehmen/wirueberuns/team/?$ /ueber-unikat.html [R=301,L,NC]
+RewriteRule ^[Uu]nternehmen/wirueberuns/zertifizierte-qualitaet/?$ /ueber-unikat.html [R=301,L,NC]
+
+# PFLICHTSEITEN
+RewriteRule ^[Ss]chadenmeldung/?$ /schaden.html [R=301,L,NC]
+RewriteRule ^[Ee]rstinformationen/?$ /erstinformation.html [R=301,L,NC]
+RewriteRule ^[Ii]mpressum/?$ /impressum.html [R=301,L,NC]
+RewriteRule ^[Dd]atenschutz/?$ /datenschutz.html [R=301,L,NC]
+
+# WECHSEL-SEITE -> UNTERNEHMEN
+RewriteRule ^[Ww]echsel/?$ /unternehmen.html [R=301,L,NC]
+
+# KONTAKT -> KONTAKT.HTML
+RewriteRule ^[Kk]ontakt/?$ /kontakt.html [R=301,L,NC]
