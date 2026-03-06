@@ -118,8 +118,8 @@
                             <i class="fa-solid fa-phone"></i>
                         </div>
                         <h3 style="font-size: 1.1rem;">Anrufen</h3>
-                        <p style="font-size: 0.95rem; color: var(--text-color); margin-bottom: 10px;"><strong>0381 669193 0</strong></p>
-                        <p style="font-size: 0.85rem; color: #64748b; margin: 0;">Mo–Fr 9–17 Uhr</p>
+                        <p style="font-size: 0.95rem; color: var(--text-color); margin-bottom: 10px;"><strong><a href="tel:+493816691930" style="color: inherit; text-decoration: none;">0381 669193 0</a></strong></p>
+                        <p style="font-size: 0.85rem; color: #64748b; margin: 0;">Mo–Do 7:30–16:00, Fr 7:30–14:30</p>
                     </a>
 
                     <!-- E-Mail -->
@@ -128,8 +128,8 @@
                             <i class="fa-solid fa-envelope"></i>
                         </div>
                         <h3 style="font-size: 1.1rem;">E-Mail schreiben</h3>
-                        <p style="font-size: 0.95rem; color: var(--text-color); margin-bottom: 10px;"><strong>info@unikat24.de</strong></p>
-                        <p style="font-size: 0.85rem; color: #64748b; margin: 0;">Antwort innerhalb 24h</p>
+                        <p style="font-size: 0.95rem; color: var(--text-color); margin-bottom: 10px;"><strong><a href="mailto:info@unikat24.de" style="color: inherit; text-decoration: none;">info@unikat24.de</a></strong></p>
+                        <p style="font-size: 0.85rem; color: #64748b; margin: 0;">In der Regel innerhalb 1 Werktag</p>
                     </a>
 
                     <!-- Rückruf -->
@@ -212,58 +212,63 @@
                 <p style="text-align: center; max-width: 600px; margin: 0 auto 40px; color: #64748b;">Füllen Sie das Formular aus und wir melden uns schnellstmöglich bei Ihnen zurück.</p>
                 
                 <div class="contact-form-wrapper">
-                    <!-- TODO: Backend-Integration erforderlich -->
-                    <!-- Optionen: Netlify Forms, Formspree, eigenes PHP-Script -->
-                    <!-- Daten die gesendet werden: name, firma, email, telefon, anliegen, nachricht -->
-                    <form action="#" method="POST" class="contact-form" id="contact-form">
+                    <form action="https://formspree.io/f/mjgavvwa" method="POST" class="contact-form" id="contact-form">
                         
                         <!-- Honeypot (Spam-Schutz) -->
-                        <div class="form-honeypot" aria-hidden="true">
-                            <label for="website">Website (bitte leer lassen)</label>
-                            <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
-                        </div>
+                        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+                        
+                        <!-- Betreff für E-Mail -->
+                        <input type="hidden" name="_subject" value="Kontaktanfrage über unikat-versicherungsmakler.de">
+                        
+                        <!-- Tracking-Felder -->
+                        <input type="hidden" name="page" value="kontakt.html">
+                        <input type="hidden" name="source" value="website">
 
                         <div class="form-group">
                             <label for="name" class="form-label">Name *</label>
-                            <input type="text" id="name" name="name" class="form-input" required aria-required="true" aria-describedby="name-hint" autocomplete="name">
-                            <span id="name-hint" class="sr-only">Bitte geben Sie Ihren vollständigen Namen ein</span>
+                            <input type="text" id="name" name="name" class="form-input" required aria-required="true" autocomplete="name">
+                            <p style="font-size: 0.85rem; color: #64748b; margin-top: 5px;">Vor- und Nachname</p>
                         </div>
 
                         <div class="form-group">
                             <label for="firma" class="form-label">Firma (optional)</label>
                             <input type="text" id="firma" name="firma" class="form-input" autocomplete="organization">
+                            <p style="font-size: 0.85rem; color: #64748b; margin-top: 5px;">Falls abweichend</p>
                         </div>
 
                         <div class="form-group">
                             <label for="email" class="form-label">E-Mail *</label>
-                            <input type="email" id="email" name="email" class="form-input" required aria-required="true" aria-describedby="email-hint" autocomplete="email">
-                            <span id="email-hint" class="sr-only">Bitte geben Sie eine gültige E-Mail-Adresse ein</span>
+                            <input type="email" id="email" name="email" class="form-input" required aria-required="true" autocomplete="email">
+                            <p style="font-size: 0.85rem; color: #64748b; margin-top: 5px;">Für unsere Antwort</p>
                         </div>
 
                         <div class="form-group">
                             <label for="telefon" class="form-label">Telefon (optional)</label>
-                            <input type="tel" id="telefon" name="telefon" class="form-input" autocomplete="tel" aria-describedby="telefon-hint">
-                            <span id="telefon-hint" class="sr-only">Telefonnummer für Rückfragen</span>
+                            <input type="tel" id="telefon" name="telefon" class="form-input" autocomplete="tel">
+                            <p style="font-size: 0.85rem; color: #64748b; margin-top: 5px;">Für Rückfragen</p>
                         </div>
 
                         <div class="form-group">
                             <label for="anliegen" class="form-label">Anliegen *</label>
-                            <select id="anliegen" name="anliegen" class="form-select" required aria-required="true" aria-describedby="anliegen-hint">
-                                <option value="">Bitte wählen...</option>
-                                <option value="gewerbe">Gewerbe allgemein</option>
-                                <option value="hausverwaltung">Hausverwaltung / WEG</option>
-                                <option value="logistik">Logistik / Spedition</option>
-                                <option value="privat">Privatkunde</option>
-                                <option value="schaden">Schadenfall</option>
-                                <option value="sonstiges">Sonstiges</option>
+                            <select id="anliegen" name="anliegen" class="form-select" required aria-required="true">
+                                <option value="" disabled selected>Bitte wählen...</option>
+                                <option value="Hausverwaltung / Immobilien (Gewerbe)">Hausverwaltung / Immobilien (Gewerbe)</option>
+                                <option value="Logistik / Spedition (Gewerbe)">Logistik / Spedition (Gewerbe)</option>
+                                <option value="Cyber (Gewerbe)">Cyber (Gewerbe)</option>
+                                <option value="Sozialwirtschaft (Gewerbe)">Sozialwirtschaft (Gewerbe)</option>
+                                <option value="Mittelstand (Gewerbe)">Mittelstand (Gewerbe)</option>
+                                <option value="bAV / Versorgung">bAV / Versorgung</option>
+                                <option value="Privat">Privat</option>
+                                <option value="Schaden">Schaden</option>
+                                <option value="Sonstiges">Sonstiges</option>
                             </select>
-                            <span id="anliegen-hint" class="sr-only">Wählen Sie die Kategorie, die am besten zu Ihrem Anliegen passt</span>
+                            <p style="font-size: 0.85rem; color: #64748b; margin-top: 5px;">Wähle die passende Kategorie</p>
                         </div>
 
                         <div class="form-group">
                             <label for="nachricht" class="form-label">Ihre Nachricht *</label>
-                            <textarea id="nachricht" name="nachricht" class="form-textarea" rows="6" required aria-required="true" aria-describedby="nachricht-hint"></textarea>
-                            <span id="nachricht-hint" class="sr-only">Beschreiben Sie Ihr Anliegen so detailliert wie möglich</span>
+                            <textarea id="nachricht" name="nachricht" class="form-textarea" rows="6" required aria-required="true"></textarea>
+                            <p style="font-size: 0.85rem; color: #64748b; margin-top: 5px;">Worum geht es konkret?</p>
                         </div>
 
                         <div style="background: #f8fafc; padding: 15px; border-radius: 6px; margin-bottom: 20px; font-size: 0.9rem; color: #64748b;">
@@ -271,16 +276,16 @@
                             <strong>Datenschutzhinweis:</strong> Wir verarbeiten Ihre Angaben zur Bearbeitung Ihrer Anfrage. Details finden Sie in unserer <a href="datenschutz.html" style="color: var(--primary-color); text-decoration: underline;">Datenschutzerklärung</a>.
                         </div>
 
-                        <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
+                        <button type="submit" class="btn btn-primary" id="submit-btn" style="width: 100%; justify-content: center;">
                             <i class="fa-solid fa-paper-plane"></i> Nachricht senden
                         </button>
 
                         <!-- Success/Error Messages (werden per JS eingeblendet) -->
-                        <div id="form-success" style="display: none; margin-top: 20px; padding: 15px; background: #f0fdf4; border-left: 4px solid #10b981; border-radius: 6px; color: #065f46;">
-                            <strong>Vielen Dank!</strong> Ihre Nachricht wurde erfolgreich versendet. Wir melden uns schnellstmöglich bei Ihnen.
+                        <div id="form-success" role="status" aria-live="polite" style="display: none; margin-top: 20px; padding: 15px; background: #f0fdf4; border-left: 4px solid #10b981; border-radius: 6px; color: #065f46;">
+                            <strong>Danke.</strong> Wir melden uns in der Regel innerhalb 1 Werktag.
                         </div>
-                        <div id="form-error" style="display: none; margin-top: 20px; padding: 15px; background: #fef2f2; border-left: 4px solid #ef4444; border-radius: 6px; color: #991b1b;">
-                            <strong>Fehler:</strong> Ihre Nachricht konnte nicht versendet werden. Bitte versuchen Sie es erneut oder kontaktieren Sie uns telefonisch.
+                        <div id="form-error" role="alert" aria-live="assertive" style="display: none; margin-top: 20px; padding: 15px; background: #fef2f2; border-left: 4px solid #ef4444; border-radius: 6px; color: #991b1b;">
+                            <strong>Das hat leider nicht geklappt.</strong> Bitte prüfe deine Angaben oder versuche es später erneut.
                         </div>
                     </form>
                 </div>
@@ -430,18 +435,75 @@
             });
         });
 
-        // TODO: Formular-Handling (Backend-Integration erforderlich)
-        // Beispiel für Netlify Forms: Füge data-netlify="true" zum <form> Tag hinzu
-        // Beispiel für Formspree: action="https://formspree.io/f/YOUR_FORM_ID"
-        
+        // Kontaktformular mit Formspree
         const contactForm = document.getElementById('contact-form');
         if (contactForm) {
-            contactForm.addEventListener('submit', function(e) {
+            let isSubmitting = false;
+            
+            contactForm.addEventListener('submit', async function(e) {
                 e.preventDefault();
-                // TODO: Hier Backend-Integration implementieren
-                console.log('Form submitted - Backend integration required');
-                document.getElementById('form-error').style.display = 'block';
-                document.getElementById('form-error').innerHTML = '<strong>Hinweis:</strong> Das Formular ist noch nicht mit einem Backend verbunden. Bitte kontaktieren Sie uns telefonisch unter 0381 669193 0 oder per E-Mail an info@unikat24.de';
+                
+                // Doppel-Submit verhindern
+                if (isSubmitting) return;
+                isSubmitting = true;
+                
+                const form = this;
+                const button = document.getElementById('submit-btn');
+                const successMsg = document.getElementById('form-success');
+                const errorMsg = document.getElementById('form-error');
+                const originalButtonText = button.innerHTML;
+                
+                // Nachrichten ausblenden (alte Meldungen entfernen)
+                successMsg.style.display = 'none';
+                errorMsg.style.display = 'none';
+                
+                // Button deaktivieren und Text ändern
+                button.disabled = true;
+                button.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Senden...';
+                
+                const formData = new FormData(form);
+                
+                try {
+                    const response = await fetch(form.action, {
+                        method: form.method,
+                        body: formData,
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    });
+                    
+                    // Content-Type prüfen und JSON nur bei Bedarf parsen
+                    const contentType = response.headers.get('content-type') || '';
+                    let data = null;
+                    if (contentType.includes('application/json')) {
+                        data = await response.json();
+                    }
+                    
+                    if (response.ok || data?.ok === true) {
+                        // Erfolg
+                        successMsg.style.display = 'block';
+                        form.reset();
+                        
+                        // Button nach 5 Sekunden wieder aktivieren
+                        setTimeout(function() {
+                            button.disabled = false;
+                            button.innerHTML = originalButtonText;
+                            isSubmitting = false;
+                        }, 5000);
+                    } else {
+                        // Fehler
+                        errorMsg.style.display = 'block';
+                        button.disabled = false;
+                        button.innerHTML = originalButtonText;
+                        isSubmitting = false;
+                    }
+                } catch (error) {
+                    // Netzwerkfehler
+                    errorMsg.style.display = 'block';
+                    button.disabled = false;
+                    button.innerHTML = originalButtonText;
+                    isSubmitting = false;
+                }
             });
         }
     </script>
