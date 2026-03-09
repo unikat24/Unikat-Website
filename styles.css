@@ -812,6 +812,63 @@ details p { margin-top: 15px; color: var(--text-color); border-top: 1px solid #f
 .review-footer { display: flex; align-items: center; justify-content: space-between; padding-top: 15px; border-top: 1px solid #f1f5f9; font-size: 0.8rem; color: #64748b; }
 .google-icon { width: 18px; height: 18px; background: conic-gradient(from -45deg, #ea4335 110deg, #4285f4 90deg 180deg, #34a853 180deg 270deg, #fbbc05 270deg) 50% 50% / 100% 100% no-repeat; border-radius: 50%; }
 
+/* --- DATENSCHUTZ STYLING --- */
+.privacy-block {
+    margin-bottom: 40px;
+}
+
+.privacy-kv {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 14px 16px;
+    margin: 14px 0 20px;
+}
+
+.privacy-row {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 14px;
+    padding: 10px 0;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.privacy-row:last-child {
+    border-bottom: 0;
+}
+
+.privacy-row .k {
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.privacy-row .v {
+    color: var(--text-color);
+}
+
+.privacy-links {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+.privacy-links li {
+    padding: 8px 0;
+}
+
+.privacy-links a {
+    color: var(--primary-color);
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+@media (max-width: 640px) {
+    .privacy-row {
+        grid-template-columns: 1fr;
+        gap: 6px;
+    }
+}
+
 /* --- FOOTER --- */
 footer { background: #020617; color: #cbd5e1; padding: 60px 0 20px; font-size: 0.9rem; }
 .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 40px; }

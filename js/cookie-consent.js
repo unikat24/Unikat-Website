@@ -8,12 +8,30 @@
 
     const STORAGE_KEY = 'unikat_cookie_consent';
     const ANALYTICS_ID = 'G-JXEPQLWPY4';
+    const CONSENT_VALIDITY_DAYS = 365; // 12 Monate
 
-    // Check if consent already exists
+    // Check if consent already exists and is still valid
     function getConsent() {
         try {
             const stored = localStorage.getItem(STORAGE_KEY);
-            return stored ? JSON.parse(stored) : null;
+            if (!stored) return null;
+            
+            const consent = JSON.parse(stored);
+            
+            // Prüfe ob Consent abgelaufen ist (12 Monate)
+            if (consent.timestamp) {
+                const consentDate = new Date(consent.timestamp);
+                const now = new Date();
+                const daysSinceConsent = (now - consentDate) / (1000 * 60 * 60 * 24);
+                
+                if (daysSinceConsent > CONSENT_VALIDITY_DAYS) {
+                    // Consent abgelaufen - entfernen
+                    localStorage.removeItem(STORAGE_KEY);
+                    return null;
+                }
+            }
+            
+            return consent;
         } catch (e) {
             return null;
         }
@@ -23,7 +41,7 @@
     function saveConsent(analytics) {
         const consent = {
             analytics: analytics,
-            timestamp: new Date().toISOString()
+            timestamp: Date.now() // Unix timestamp in milliseconds
         };
         try {
             localStorage.setItem(STORAGE_KEY, JSON.stringify(consent));
@@ -61,15 +79,15 @@
             <div class="cookie-banner-content">
                 <div class="cookie-banner-text">
                     <p><strong>Cookies & Datenschutz</strong></p>
-                    <p>Wir nutzen Cookies und externe Dienste (Google Analytics, Maps), um unser Angebot zu verbessern. 
+                    <p>Wir nutzen Google Analytics, um die Nutzung unserer Website zu analysieren. Ihre Daten werden dabei in den USA verarbeitet. 
                     Weitere Informationen finden Sie in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.</p>
                 </div>
                 <div class="cookie-banner-buttons">
-                    <button id="cookie-accept-all" class="cookie-btn cookie-btn-primary">
-                        <i class="fa-solid fa-check"></i> Alle akzeptieren
-                    </button>
                     <button id="cookie-accept-necessary" class="cookie-btn cookie-btn-secondary">
-                        Nur Notwendige
+                        <i class="fa-solid fa-xmark"></i> Ablehnen
+                    </button>
+                    <button id="cookie-accept-all" class="cookie-btn cookie-btn-primary">
+                        <i class="fa-solid fa-check"></i> Akzeptieren
                     </button>
                 </div>
             </div>
