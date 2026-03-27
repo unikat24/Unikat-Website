@@ -6,8 +6,8 @@
     <meta name="robots" content="noindex, nofollow">
     <title>Kundenportal Login | Unikat Versicherungsmakler</title>
     <link rel="canonical" href="https://www.unikat-versicherungsmakler.de/kundenportal.html">
-    <link rel="icon" type="image/png" href="img/favicon.webp">
-    <link rel="apple-touch-icon" href="img/favicon.webp">        <!-- Lokale Fonts (DSGVO-konform) -->
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    <link rel="apple-touch-icon" href="img/favicon.png">        <!-- Lokale Fonts (DSGVO-konform) -->
     <link rel="preload" href="fonts/inter-v20-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="fonts/inter-v20-latin-700.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
@@ -62,34 +62,33 @@
                 <i class="fa-solid fa-bars"></i>
             </div>
 
-            <nav class="nav-menu">
-                <div class="nav-item"><a href="/" class="nav-link">Start</a></div>
-                
-                <div class="nav-item dropdown">
-                    <a href="privat.html" class="nav-link">Privat <i class="fa-solid fa-chevron-down dropdown-icon"></i></a>
-                    <div class="dropdown-menu">
-                        <a href="privat.html#wohnen" class="dropdown-link">Wohnen & Eigentum</a>
-                        <a href="privat.html#beruf" class="dropdown-link">Beruf & Familie</a>
-                        <a href="privat.html#gesundheit" class="dropdown-link">Gesundheit & Pflege</a>
-                        <a href="privat.html#tiere" class="dropdown-link">Tiere & Pferde</a>
-                        <a href="privat-betriebliche-vorsorge.html" class="dropdown-link">Betriebsrente (für Arbeitnehmer)</a>
-                    </div>
-                </div>
-
+                        <nav class="nav-menu">
                 <div class="nav-item dropdown">
                     <a href="unternehmen.html" class="nav-link">Unternehmen <i class="fa-solid fa-chevron-down dropdown-icon"></i></a>
                     <div class="dropdown-menu">
-                        <a href="unternehmen-logistik.html" class="dropdown-link">Logistik & Flotten</a>
                         <a href="unternehmen-immobilien.html" class="dropdown-link">Immobilien & Verwalter</a>
+                        <a href="unternehmen-logistik.html" class="dropdown-link">Logistik & Flotten</a>
                         <a href="unternehmen-versorgung.html" class="dropdown-link">Betriebliche Versorgung</a>
                         <a href="unternehmen-sozialwirtschaft.html" class="dropdown-link">Sozialwirtschaft & Pflege</a>
                         <a href="unternehmen-mittelstand.html" class="dropdown-link">Mittelstand & Gewerbe</a>
                         <a href="unternehmen-cyber.html" class="dropdown-link">Cyber & IT-Schutz</a>
                     </div>
                 </div>
+                
+                <div class="nav-item dropdown">
+                    <a href="privat.html" class="nav-link">Privat <i class="fa-solid fa-chevron-down dropdown-icon"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="privat-wohnen.html" class="dropdown-link">Wohnen & Eigentum</a>
+                        <a href="privat-beruf-familie.html" class="dropdown-link">Beruf & Familie</a>
+                        <a href="privat-gesundheit.html" class="dropdown-link">Gesundheit & Pflege</a>
+                        <a href="privat-tiere.html" class="dropdown-link">Tiere & Pferde</a>
+                        <a href="privat-betriebliche-vorsorge.html" class="dropdown-link">Betriebsrente (für Arbeitnehmer)</a>
+                    </div>
+                </div>
 
                 <div class="nav-item"><a href="ueber-unikat.html" class="nav-link">Über Unikat</a></div>
                 <div class="nav-item"><a href="kontakt.html" class="nav-link">Kontakt</a></div>
+                
                 <div class="nav-item">
                     <a href="kundenportal.html" class="btn btn-primary btn-sm">Kundenportal</a>
                 </div>
@@ -100,8 +99,8 @@
     <main>
         <section class="hero">
             <div class="container text-center">
-                <h1>Unikat Digital</h1>
-                <p class="subline">Ihr digitaler Versicherungsordner.</p>
+                <h1>Kundenportal</h1>
+                <p class="subline">Zugang zu Ihren Verträgen und Dokumenten.</p>
             </div>
         </section>
 
@@ -110,11 +109,10 @@
                 <div class="card">
                     <h3>Anmeldung</h3>
                     <p>Greifen Sie auf Ihre Verträge und Dokumente zu.</p>
-                    <div style="background: #f1f5f9; padding: 20px; border-radius: 6px; margin: 20px 0;">
-                        <p><em>[Hier wird das Login-Formular des externen Portalanbieters integriert]</em></p>
-                    </div>
-                    <a href="#" class="btn btn-primary">Zum Login</a>
                     <p style="font-size: 0.9rem; margin-top: 20px; color: #666;">Noch keinen Zugang? <a href="mailto:info@unikat24.de" style="text-decoration: underline;">Zugangsdaten anfordern.</a></p>
+                    <p style="font-size: 0.85rem; margin-top: 15px; color: #64748b; padding: 15px; background: #f8fafc; border-radius: 6px; border-left: 3px solid var(--primary-color);">
+                        <i class="fa-solid fa-info-circle"></i> Das Kundenportal wird über einen externen Partner bereitgestellt. Den Zugang erhalten Sie über unser Team.
+                    </p>
                 </div>
                 
                 <div class="mt-20">
@@ -180,19 +178,6 @@
                         <li><a href="schaden.html" style="color: #ef4444; font-weight: 700;"><i class="fa-solid fa-triangle-exclamation" style="margin-right: 5px;"></i> Schaden melden</a></li>
                     </ul>
 
-                    <h3 style="margin-top: 25px; font-size: 1rem; opacity: 0.8;">Online Rechner</h3>
-                    <ul class="footer-links" style="font-size: 0.9rem;">
-                        <li>
-                            <a href="https://apps.nafi.de/NOVA/login/nafi_ndo_1021141198_20210112145536/V3N0eqh6J" target="_blank" rel="noopener noreferrer">
-                                Vergleichsrechner Privat <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.7em;"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://ts.thinksurance.de/p/151f048b5b35cb35" target="_blank" rel="noopener noreferrer">
-                                Gewerbe Rechner <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.7em;"></i>
-                            </a>
-                        </li>
-                    </ul>
                 </div>
 
                 <div class="footer-col trust-col">
@@ -206,7 +191,7 @@
                         
                         <a href="https://share.google/hpFKiHGfPf8xHQE2K" target="_blank" rel="noopener" class="google-badge" title="Direkt zu unserem Google-Profil">
                             <div class="stars">★★★★★</div>
-                            <span>5,0 bei 80 Bewertungen</span>
+                            <span>5,0 bei 80+ Bewertungen</span>
                         </a>
                     </div>
 

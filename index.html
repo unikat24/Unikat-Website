@@ -48,8 +48,8 @@
       "@context": "https://schema.org",
       "@type": "InsuranceAgency",
       "name": "Unikat Versicherungsmakler GmbH",
-      "image": "https://www.unikat24.de/img/logo.png",
-      "url": "https://www.unikat24.de",
+      "image": "https://www.unikat-versicherungsmakler.de/img/logo.png",
+      "url": "https://www.unikat-versicherungsmakler.de",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "August-Bebel-Straße 11",
@@ -232,7 +232,7 @@
 
             <div class="top-actions">
                 <a href="https://outlook.office365.com/owa/calendar/UnikatVersicherungsmaklerGmbH@unikat24.de/bookings/" target="_blank" rel="noopener noreferrer" class="top-link-accent">
-                    <i class="fa-regular fa-calendar-check"></i> Termin buchen
+                    <i class="fa-regular fa-calendar-check"></i> Erstgespräch anfragen
                 </a>
                 
                 <a href="schaden.html" class="btn-signal-small">
@@ -259,8 +259,8 @@
                 <div class="nav-item dropdown">
                     <a href="unternehmen.html" class="nav-link">Unternehmen <i class="fa-solid fa-chevron-down dropdown-icon"></i></a>
                     <div class="dropdown-menu">
-                        <a href="unternehmen-logistik.html" class="dropdown-link">Logistik & Flotten</a>
                         <a href="unternehmen-immobilien.html" class="dropdown-link">Immobilien & Verwalter</a>
+                        <a href="unternehmen-logistik.html" class="dropdown-link">Logistik & Flotten</a>
                         <a href="unternehmen-versorgung.html" class="dropdown-link">Betriebliche Versorgung</a>
                         <a href="unternehmen-sozialwirtschaft.html" class="dropdown-link">Sozialwirtschaft & Pflege</a>
                         <a href="unternehmen-mittelstand.html" class="dropdown-link">Mittelstand & Gewerbe</a>
@@ -271,10 +271,10 @@
                 <div class="nav-item dropdown">
                     <a href="privat.html" class="nav-link">Privat <i class="fa-solid fa-chevron-down dropdown-icon"></i></a>
                     <div class="dropdown-menu">
-                        <a href="privat.html#wohnen" class="dropdown-link">Wohnen & Eigentum</a>
-                        <a href="privat.html#beruf" class="dropdown-link">Beruf & Familie</a>
-                        <a href="privat.html#gesundheit" class="dropdown-link">Gesundheit & Pflege</a>
-                        <a href="privat.html#tiere" class="dropdown-link">Tiere & Pferde</a>
+                        <a href="privat-wohnen.html" class="dropdown-link">Wohnen & Eigentum</a>
+                        <a href="privat-beruf-familie.html" class="dropdown-link">Beruf & Familie</a>
+                        <a href="privat-gesundheit.html" class="dropdown-link">Gesundheit & Pflege</a>
+                        <a href="privat-tiere.html" class="dropdown-link">Tiere & Pferde</a>
                         <a href="privat-betriebliche-vorsorge.html" class="dropdown-link">Betriebsrente (für Arbeitnehmer)</a>
                     </div>
                 </div>
@@ -304,7 +304,7 @@
                         <p class="hero-subline">Für Hausverwaltungen, WEG-Verwalter und Speditionen in MV: feste Ansprechpartner, strukturierte Bestandsprüfung und persönliche Schadenbegleitung.</p>
                         
                         <a href="https://outlook.office365.com/owa/calendar/UnikatVersicherungsmaklerGmbH@unikat24.de/bookings/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-hero">
-                            <i class="fa-solid fa-briefcase"></i> Erstgespräch buchen
+                            <i class="fa-solid fa-briefcase"></i> Erstgespräch anfragen
                         </a>
                     </div>
                 </div>
@@ -312,10 +312,10 @@
             </div>
             
             <!-- Neue globale Trust-Bar mit KZA-Daten -->
-            <div class="hero-trust-bar">
+            <div class="hero-trust-bar" style="position: relative;">
                 <div class="hero-trust-item">
                     <i class="fa-solid fa-award"></i>
-                    <span><strong>Kundenzufriedenheit Note 1,03 (2025)</strong></span>
+                    <span>Kundenzufriedenheit Note 1,03 (2025)<sup style="font-size: 0.6em;">*</sup></span>
                 </div>
                 <div class="hero-trust-item">
                     <i class="fa-solid fa-certificate"></i>
@@ -329,6 +329,7 @@
                     <i class="fa-solid fa-users"></i>
                     <span>Über 3.900 betreute Mandanten</span>
                 </div>
+                <div style="position: absolute; bottom: 2px; right: 20px; font-size: 0.55rem; color: #64748b; opacity: 0.5;"><sup>*</sup>Jährliche interne Kundenbefragung, Schulnotensystem 1 bis 6, ca. 100 befragte Mandanten pro Jahr.</div>
             </div>
         </section>
 
@@ -358,45 +359,55 @@
             <div class="container">
                 <h2 class="section-title">So läuft die Zusammenarbeit</h2>
                 
-                <div class="process-grid">
-                    <!-- Schritt 1: Analyse -->
-                    <div class="process-step animate-on-scroll">
+                <div style="display: grid; grid-template-columns: repeat(6, 1fr); gap: 30px; max-width: 1200px; margin: 0 auto;">
+                    <!-- Schritt 1: Erstgespräch -->
+                    <div class="process-step animate-on-scroll" style="grid-column: span 2;">
                         <div class="process-icon">
-                            <i class="fa-solid fa-magnifying-glass-chart"></i>
+                            <i class="fa-solid fa-comments"></i>
                         </div>
                         <div class="process-number">01</div>
-                        <h3>Analyse & Audit</h3>
-                        <p>Wir prüfen bestehende Verträge auf Lücken und Haftungsrisiken.</p>
+                        <h3>Erstgespräch</h3>
+                        <p>Wir klären Ausgangslage, Ziele und Handlungsbedarf.</p>
                     </div>
 
-                    <!-- Schritt 2: Konzept -->
-                    <div class="process-step animate-on-scroll">
+                    <!-- Schritt 2: Analyse -->
+                    <div class="process-step animate-on-scroll" style="grid-column: span 2;">
                         <div class="process-icon">
-                            <i class="fa-solid fa-file-shield"></i>
+                            <i class="fa-solid fa-magnifying-glass"></i>
                         </div>
                         <div class="process-number">02</div>
-                        <h3>Konzept</h3>
-                        <p>Marktneutraler Vergleich und Erstellung eines Deckungskonzepts.</p>
+                        <h3>Analyse</h3>
+                        <p>Wir prüfen Verträge, Risiken und mögliche Lücken.</p>
                     </div>
 
-                    <!-- Schritt 3: Umsetzung -->
-                    <div class="process-step animate-on-scroll">
+                    <!-- Schritt 3: Konzept -->
+                    <div class="process-step animate-on-scroll" style="grid-column: span 2;">
                         <div class="process-icon">
-                            <i class="fa-solid fa-pen-nib"></i>
+                            <i class="fa-solid fa-file-lines"></i>
                         </div>
                         <div class="process-number">03</div>
-                        <h3>Umsetzung</h3>
-                        <p>Wir übernehmen Dokumentation und laufende Vertragsverwaltung.</p>
+                        <h3>Konzept</h3>
+                        <p>Wir strukturieren Empfehlungen und priorisieren die nächsten Schritte.</p>
                     </div>
 
-                    <!-- Schritt 4: Betreuung -->
-                    <div class="process-step animate-on-scroll">
+                    <!-- Schritt 4: Marktvergleich -->
+                    <div class="process-step animate-on-scroll" style="grid-column: 2 / span 2;">
                         <div class="process-icon">
-                            <i class="fa-solid fa-handshake"></i>
+                            <i class="fa-solid fa-scale-balanced"></i>
                         </div>
                         <div class="process-number">04</div>
-                        <h3>Betreuung</h3>
-                        <p>Feste Jahresgespräche und direkte Schadenbegleitung. Kein Ticketsystem, keine anonyme Hotline.</p>
+                        <h3>Marktvergleich</h3>
+                        <p>Wir vergleichen Lösungen, Konditionen und sinnvolle Alternativen.</p>
+                    </div>
+
+                    <!-- Schritt 5: Umsetzung -->
+                    <div class="process-step animate-on-scroll" style="grid-column: 4 / span 2;">
+                        <div class="process-icon">
+                            <i class="fa-solid fa-circle-check"></i>
+                        </div>
+                        <div class="process-number">05</div>
+                        <h3>Umsetzung</h3>
+                        <p>Wenn Sie möchten, begleiten wir Umstellung, Übernahme und nächste Schritte.</p>
                     </div>
                 </div>
             </div>
@@ -410,16 +421,16 @@
                 </div>
 
                 <div class="risk-grid">
-                    <a href="unternehmen-logistik.html" class="risk-card card-link animate-on-scroll">
-                        <div class="risk-icon-small"><i class="fa-solid fa-truck-fast"></i></div>
-                        <h3>Logistik & Spedition</h3>
-                        <p>Flotte, CMR-Haftung und Güterversicherung aus einem Konzept. Wir kennen typische Regressketten und schaffen klare Abläufe im Schadenfall.</p>
-                    </a>
-
                     <a href="unternehmen-immobilien.html" class="risk-card card-link animate-on-scroll">
                         <div class="risk-icon-small"><i class="fa-solid fa-city"></i></div>
                         <h3>Immobilienwirtschaft</h3>
                         <p>VSH, Rahmenverträge und WEG-Deckungskonzepte für Verwalter. Wir prüfen Altverträge auf Unterversicherung und begleiten Schäden aktiv in Abstimmung mit Verwalter und Versicherer.</p>
+                    </a>
+
+                    <a href="unternehmen-logistik.html" class="risk-card card-link animate-on-scroll">
+                        <div class="risk-icon-small"><i class="fa-solid fa-truck-fast"></i></div>
+                        <h3>Logistik & Spedition</h3>
+                        <p>Flotte, CMR-Haftung und Güterversicherung aus einem Konzept. Wir kennen typische Regressketten und schaffen klare Abläufe im Schadenfall.</p>
                     </a>
 
                     <a href="unternehmen-versorgung.html" class="risk-card card-link animate-on-scroll">
@@ -489,8 +500,9 @@
             </div>
         </section>
 
+
         <!-- Statische Reviews (DSGVO-konform) -->
-        <section class="section bg-white">
+        <section class="section bg-light">
             <div class="container">
                 <h2 class="section-title">Was unsere Mandanten sagen</h2>
                 
@@ -643,10 +655,10 @@
         <section class="cta-banner">
             <div class="container">
                 <h2>Wann wurden Ihre Verträge zuletzt geprüft?</h2>
-                <p>Märkte ändern sich, Risiken auch. Nutzen Sie unser kostenfreies Jahresgespräch, um Lücken zu schließen und Kosten zu senken.</p>
+                <p>Märkte ändern sich, Risiken auch. Nutzen Sie unser Jahresgespräch, um Lücken zu schließen und Kosten zu senken.</p>
                 <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
                     <a href="https://outlook.office365.com/owa/calendar/UnikatVersicherungsmaklerGmbH@unikat24.de/bookings/" target="_blank" rel="noopener noreferrer" class="btn btn-accent">
-                        Termin online buchen
+                        Erstgespräch anfragen
                     </a>
                     <a href="mailto:info@unikat24.de?subject=Terminanfrage Jahresgespräch" class="btn btn-white" style="background: white; color: var(--primary-color);">
                         Kontakt aufnehmen
@@ -708,19 +720,6 @@
                         <li><a href="schaden.html" style="color: #ef4444; font-weight: 700;"><i class="fa-solid fa-triangle-exclamation" style="margin-right: 5px;"></i> Schaden melden</a></li>
                     </ul>
 
-                    <h3 style="margin-top: 25px; font-size: 1rem; opacity: 0.8;">Online Rechner</h3>
-                    <ul class="footer-links" style="font-size: 0.9rem;">
-                        <li>
-                            <a href="https://apps.nafi.de/NOVA/login/nafi_ndo_1021141198_20210112145536/V3N0eqh6J" target="_blank" rel="noopener noreferrer">
-                                Vergleichsrechner Privat <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.7em;"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://ts.thinksurance.de/p/151f048b5b35cb35" target="_blank" rel="noopener noreferrer">
-                                Gewerbe Rechner <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.7em;"></i>
-                            </a>
-                        </li>
-                    </ul>
                 </div>
 
                 <div class="footer-col trust-col">

@@ -140,6 +140,21 @@
 .fa-chart-line:before { content: "\f201"; }
 .fa-phone-volume:before { content: "\f2a0"; }
 .fa-pen-nib:before { content: "\f5ad"; }
+.fa-comments:before { content: "\f086"; }
+.fa-balance-scale:before { content: "\f24e"; }
+.fa-scale-balanced:before { content: "\f24e"; }
+.fa-horse:before { content: "\f6f0"; }
+.fa-dog:before { content: "\f6d3"; }
+.fa-paw:before { content: "\f1b0"; }
+.fa-camera:before { content: "\f030"; }
+.fa-shield:before { content: "\f132"; }
+.fa-info-circle:before { content: "\f05a"; }
+.fa-tooth:before { content: "\f5c9"; }
+.fa-bed-pulse:before { content: "\f487"; }
+.fa-glasses:before { content: "\f530"; }
+.fa-shield-heart:before { content: "\e574"; }
+.fa-horse-head:before { content: "\f7ab"; }
+.fa-cat:before { content: "\f6be"; }
 
 /* Animationen */
 .fa-spin {

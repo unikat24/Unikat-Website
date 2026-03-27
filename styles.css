@@ -552,9 +552,10 @@ header {
 
 .process-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
     margin-top: 50px;
+    justify-content: center;
 }
 
 .process-step {
@@ -617,18 +618,26 @@ header {
     margin: 0;
 }
 
-/* Mobile Anpassung */
+/* Mobile Anpassung für 6-Spalten-Grid */
 @media (max-width: 1024px) {
-    .process-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 25px;
+    .process-section [style*="grid-template-columns: repeat(6, 1fr)"] {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+    
+    .process-section .process-step[style*="grid-column: span 2"],
+    .process-section .process-step[style*="grid-column: 2 / span 2"],
+    .process-section .process-step[style*="grid-column: 4 / span 2"] {
+        grid-column: span 1 !important;
     }
 }
 
 @media (max-width: 640px) {
-    .process-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
+    .process-section [style*="grid-template-columns: repeat(6, 1fr)"] {
+        grid-template-columns: 1fr !important;
+    }
+    
+    .process-section .process-step[style*="grid-column"] {
+        grid-column: 1 / -1 !important;
     }
     
     .process-icon {
