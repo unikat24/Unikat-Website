@@ -1,0 +1,29 @@
+# Jekyll Configuration für GitHub Pages
+# Diese Datei ermöglicht "Pretty URLs" ohne .html-Endungen
+
+# Permalink-Struktur: URLs ohne .html-Endung
+permalink: pretty
+
+# GitHub Pages Einstellungen
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Exclude-Liste: Dateien, die nicht verarbeitet werden sollen
+exclude:
+  - README.md
+  - RELAUNCH-CHECKLIST.md
+  - KONTAKT-SEITE-DOKUMENTATION.md
+  - DATENSCHUTZ-FAKTEN.md
+  - DATENSCHUTZ-TEXTBAUSTEINE.md
+  - BATCH2-BESTAETIGUNG.md
+  - "*.py"
+  - .gitignore
+  - .htaccess
+  - _redirects
+
+# Encoding
+encoding: utf-8
+
+# Markdown-Engine
+markdown: kramdown
